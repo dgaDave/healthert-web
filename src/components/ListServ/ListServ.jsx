@@ -1,17 +1,18 @@
 import { useState } from "react"
 import "./ListServ.css"
+import Hearth from "./svg/Hearth"
 
 const Items = ({svg,title,text}) => {
     return(
-        <div className="grid grid-rows-3 grid-flow-col gap-3">
-            <div className="place-content-center">
+        <div className="contenedor">
+            <div className="contenedor--svg">
                 {svg}
             </div>
-            <div>
-                <h1 className="text-center lg:p-5 md:p-2">{title}</h1>
+            <div className="contenedor--title">
+                <h1>{title}</h1>
             </div>
-            <div>
-                <p className="text-center  lg:p-5 md:p-2">
+            <div  className="contenedor--text">
+                <p>
                     {text}
                 </p>
             </div>
@@ -22,7 +23,7 @@ const Items = ({svg,title,text}) => {
 const ListServ = ()=> {
     let listadoServicios = [
         {
-            svg:'no',
+            svg: <Hearth></Hearth>,
             title:'Medición BPM',
             text:'Si'
         },

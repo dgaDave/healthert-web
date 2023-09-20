@@ -1,3 +1,19 @@
 @tailwind components;
 @tailwind base;
 @tailwind utilities;
+
+.contenedor{
+    @apply grid grid-rows-3 grid-flow-col gap-3 m-5 p-8 bg-gray-100 dark:bg-gray-500 dark:text-white;
+}
+
+.contenedor--svg{
+    @apply flex justify-center;
+}
+
+.contenedor--title{
+    @apply place-content-center text-center  font-bold text-3xl text-verde;
+}
+
+.contenedor--text{
+    @apply text-center font-normal text-lg text-gray-200 ;
+}
