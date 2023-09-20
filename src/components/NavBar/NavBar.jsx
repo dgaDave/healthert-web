@@ -8,6 +8,7 @@ const NavBar = () => {
 
   return (
     <nav className='h-20 relative md:h-24 z-10 py-2 px-2 lg:px-4 xl:px-6 bg-white dark:bg-neutral-800 shadow-lg flex items-center justify-between'>
+      {/* Falta el logotipo aqui */}
       <a href='#'>
         <span className='text-3xl font-semibold md:text-4xl  text-verde'>HEALTHERT</span>
       </a>
@@ -19,6 +20,7 @@ const NavBar = () => {
       </label>
       <div className='md:static md:translate-x-0 md:bg-transparent md:shadow-none absolute text-xl h-fit bg-white dark:bg-neutral-800 shadow-lg inset-0 top-20 -translate-x-full px-4 py-2 rounded-b-xl peer-checked/menu:-translate-x-0 transition-all duration-200'>
         <ul className='md:flex lg:space-x-4  md:space-x-2 lg:text-2xl items-center'>
+          {/* ids de los titulos aqui */}
           <li className='md:inline-block' onClick={clickMenu}><a className='glow' href="#">Servicios</a></li>
           <li className='md:inline-block' onClick={clickMenu}><a className='glow' href="#">Descargar</a></li>
           <li className='md:inline-block' onClick={clickMenu}><a className='glow' href="#">Planes</a></li>
