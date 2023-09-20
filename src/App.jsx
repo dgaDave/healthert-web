@@ -9,9 +9,12 @@
 // Nosotros
 // Footer
 
+import ListServ from "./components/ListServ/ListServ"
+
 function App() {
   return (
     <>
+    <ListServ></ListServ>
     </>
   )
 }
