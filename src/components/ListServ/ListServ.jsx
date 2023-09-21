@@ -43,8 +43,10 @@ const ListServ = ()=> {
     ]
     const [arreglo, setArreglo] = useState(listadoServicios)
   return (
-    <div className="grid grid-cols-1 gap-1 place-content-center lg:grid-cols-3">
-      {arreglo.map(item => <Items key={item.title} svg={item.svg} title={item.title} text={item.text}></Items>)}
+    <div className="flex justify-center">
+        <div className="grid grid-cols-1 gap-1 place-content-center lg:grid-cols-3 max-w-screen-xl">
+            {arreglo.map(item => <Items key={item.title} svg={item.svg} title={item.title} text={item.text}></Items>)}
+        </div>
     </div>
   )
 }
