@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 .contenedor{
-    @apply grid grid-rows-3 grid-flow-col gap-3 m-5 p-8 bg-gray-100 dark:bg-gray-500 dark:text-white;
+    @apply grid grid-rows-3 grid-flow-col gap-0 m-4 p-5 bg-gray-100 dark:bg-gray-500 dark:text-white transform  duration-700 motion-safe:hover:scale-105 ;
 }
 
 .contenedor--svg{
-    @apply flex justify-center;
+    @apply flex justify-center m-5;
 }
 
 .contenedor--title{
-    @apply place-content-center text-center  font-bold text-3xl text-verde;
+    @apply flex justify-center place-content-center text-center  font-bold text-3xl text-verde;
 }
 
 .contenedor--text{
-    @apply text-center font-normal text-lg text-gray-200 ;
+    @apply flex justify-center text-center font-normal text-lg text-gray-500 dark:text-gray-200;
 }

@@ -1,6 +1,8 @@
 import { useState } from "react"
 import "./ListServ.css"
 import Hearth from "./svg/Hearth"
+import Geo from "./svg/Geo"
+import Plus from "./svg/Plus"
 
 const Items = ({svg,title,text}) => {
     return(
@@ -8,6 +10,7 @@ const Items = ({svg,title,text}) => {
             <div className="contenedor--svg">
                 {svg}
             </div>
+            
             <div className="contenedor--title">
                 <h1>{title}</h1>
             </div>
@@ -25,17 +28,17 @@ const ListServ = ()=> {
         {
             svg: <Hearth></Hearth>,
             title:'Medición BPM',
-            text:'Si'
+            text:'En Healthert ofrecemos la posibilidad de cuidar a tu paciente desde la comodidad de la palma de tu mano, podrás saber sus signos vitales en cualquier momento, así como poder generar un resumen de los mismos.'
         },
         {
-            svg:'Si',
+            svg:<Geo></Geo>,
             title:'Ubicación en Tiempo Real',
-            text:'no'
+            text:'En Healthert nos preocupamos por el bienestar de nuestros usuarios, por ello brindamos la oportunidad de saber en donde se encuentran, en todo momento, en cualquier lugar. Permite que te facilitemos el mejor cuidado remoto posible y nos esforcemos por cumplir y superar tus expectativas.'
         },
         {
-            svg:'Si',
+            svg:<Plus></Plus>,
             title:'Ver más',
-            text:'no'
+            text:'Te invitamos a ver aún más de nuestros servicios y funciones dentro de nuestra aplicación móvil.'
         }
     ]
     const [arreglo, setArreglo] = useState(listadoServicios)
