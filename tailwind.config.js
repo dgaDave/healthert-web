@@ -8,7 +8,9 @@ export default {
     extend: {
       colors: {
         'verde': '#6FD81C',
-        'morado': '#D914DB'
+        'morado': '#D914DB',
+        'moradoOscuro': '#8D008F'
+
       },
     },
     fontFamily: {
@@ -16,5 +18,7 @@ export default {
     }
   },
   plugins: [],
+
+  
 }
 

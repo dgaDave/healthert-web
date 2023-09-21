@@ -9,9 +9,15 @@
 // Nosotros
 // Footer
 
+import { Funciones } from "./components/Funciones/Funciones"
+import{Planes} from "./components/Planes/Planes"
+
+
 function App() {
   return (
     <>
+        <Planes></Planes>
+        <Funciones></Funciones>
     </>
   )
 }
