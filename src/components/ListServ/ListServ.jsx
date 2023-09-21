@@ -32,7 +32,7 @@ const ListServ = ()=> {
         },
         {
             svg:<Geo></Geo>,
-            title:'Ubicación en Tiempo Real',
+            title:'Ubicación en TR',
             text:'En Healthert nos preocupamos por el bienestar de nuestros usuarios, por ello brindamos la oportunidad de saber en donde se encuentran, en todo momento, en cualquier lugar. Permite que te facilitemos el mejor cuidado remoto posible y nos esforcemos por cumplir y superar tus expectativas.'
         },
         {
@@ -43,7 +43,7 @@ const ListServ = ()=> {
     ]
     const [arreglo, setArreglo] = useState(listadoServicios)
   return (
-    <div className="grid grid-cols-1 gap-1 place-content-center md:grid-cols-3">
+    <div className="grid grid-cols-1 gap-1 place-content-center lg:grid-cols-3">
       {arreglo.map(item => <Items key={item.title} svg={item.svg} title={item.title} text={item.text}></Items>)}
     </div>
   )

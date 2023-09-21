@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .contenedor{
-    @apply grid grid-rows-3 grid-flow-col gap-0 m-4 p-5 bg-gray-100 dark:bg-gray-500 dark:text-white transform  duration-700 motion-safe:hover:scale-105 ;
+    @apply flex flex-col m-2 p-5 bg-gray-100 dark:bg-gray-500 dark:text-white transform  duration-700 motion-safe:hover:scale-105 lg:m-4;
 }
 
 .contenedor--svg{
@@ -11,9 +11,9 @@
 }
 
 .contenedor--title{
-    @apply flex justify-center place-content-center text-center  font-bold text-3xl text-verde;
+    @apply flex justify-center place-content-center text-center m-5 font-bold text-3xl text-verde;
 }
 
 .contenedor--text{
-    @apply flex justify-center text-center font-normal text-lg text-gray-500 dark:text-gray-200;
+    @apply grid leading-5  justify-center text-center font-normal text-base m-6 text-gray-500 dark:text-gray-200;
 }
