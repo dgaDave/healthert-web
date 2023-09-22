@@ -9,12 +9,13 @@
 // Nosotros
 // Footer
 
+import Descargar from "./components/Descargar/Descargar"
 import ListServ from "./components/ListServ/ListServ"
 
 function App() {
   return (
     <>
-    <ListServ></ListServ>
+    <Descargar></Descargar>
     </>
   )
 }

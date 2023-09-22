@@ -45,7 +45,7 @@ const ListServ = ()=> {
   return (
     <div className="grid grid-cols-1 gap-1 place-content-center md:grid-cols-3">
       {arreglo.map(item => <Items key={item.title} svg={item.svg} title={item.title} text={item.text}></Items>)}
-    </div>
+1604    </div>
   )
 }
 export default ListServ
