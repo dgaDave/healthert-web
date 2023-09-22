@@ -13,7 +13,7 @@ export const CardPlanes = ({planes}) => {
             <span className="text-5xl font-extrabold tracking-tight text-verde dark:text-verde">
               {plan.precio}
             </span>
-            <span className="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">
+            <span className="ml-1 text-xl font-bold text-gray-400 dark:text-gray-400">
               {plan.periodo}
             </span>
           </div>
@@ -21,7 +21,7 @@ export const CardPlanes = ({planes}) => {
             {plan.caracteristicas.map((caracteristica, idx) => (
               <li
                 key={idx}
-                className="flex space-x-3 items-center text-base font-normal leading-tight text-gray-500 dark:text-gray-400 text-center">
+                className="flex space-x-3 items-center text-base font-roboto font-bold leading-tight text-gray-400 dark:text-gray-400 text-center">
                 <svg
                   className="flex-shrink-0 w-4 h-4 text-verde dark:text-morado"
                   aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -38,5 +38,6 @@ export const CardPlanes = ({planes}) => {
         </div>
       ))}
     </div>
+    
   )
 }

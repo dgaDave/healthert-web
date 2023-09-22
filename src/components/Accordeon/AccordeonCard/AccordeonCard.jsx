@@ -23,7 +23,7 @@ const AccordeonCard = ({ item, index, activeIndex }) => {
             index === activeIndex ? 'opacity-100' : 'opacity-70'
           }`}
           >
-            <p className="mb-2 text-gray-400 dark:text-verde font-bold font-roboto">
+            <p className="mb-2 text-gray-400 dark:text-white font-bold font-roboto">
               {item.contenido}
             </p>
             <img

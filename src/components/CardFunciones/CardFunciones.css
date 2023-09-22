@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.contenedor{
+    @apply  max-w-sm bg-white 
+            border border-verde rounded-t rounded-b 
+          hover:bg-gray-100
+            rounded-lg shadow 
+            dark:bg-black
+            dark:border-white
+            dark:hover:bg-gray-700
+            shadow
+            transform  duration-700
+            motion-safe:hover:scale-105 lg:m-4
+           
+}
+
+.textoTitulo{
+            
+    @apply  mb-2 text-xl 
+            md:text-2xl 
+            lg:text-3xl 
+            font-roboto
+            font-bold 
+            tracking-tight
+          text-verde
+          dark:text-white
+          dark:hover:text-moradoOscuro
+          hover:text-moradoOscuro duration-100
+}
+.texto{
+    @apply  mb-2 
+            text-sm 
+            md:text-base 
+            font-roboto
+            font-bold
+          text-gray-400
+          dark:text-white
+}
