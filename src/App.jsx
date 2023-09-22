@@ -8,14 +8,16 @@
 // Funciones
 // Nosotros
 // Footer
+import React from 'react'
+import Inicio from './components/inicio/inicio'
 
-import ListServ from "./components/ListServ/ListServ"
 
-function App() {
+function App () {
   return (
     <>
-    <ListServ></ListServ>
+    <Inicio/>
     </>
+    
   )
 }
 
