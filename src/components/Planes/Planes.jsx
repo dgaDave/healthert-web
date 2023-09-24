@@ -46,7 +46,7 @@ export const Planes = () => {
         ]
   return (
    <>
-    <div className="dark:bg-gray-900">
+    <div className="dark:bg-slate-900">
         <div className="text-moradoOscuro dark:text-white font-roboto font-bold text-5xl text-center py-5">
           <div className="mx-auto max-w-md p-5">
             <img src={logo} alt="Logo corazón" className="w-20 h-20 mx-auto" />

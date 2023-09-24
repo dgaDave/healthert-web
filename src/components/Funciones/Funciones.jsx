@@ -102,7 +102,7 @@ export const Funciones = () => {
 
     return (
         <>
-        <div className="flex justify-center dark:bg-gray-900 ">
+        <div className="flex justify-center dark:bg-slate-900 ">
             <div className="dark:bg-gray-900 text-moradoOscuro dark:text-white font-roboto max-w-screen-lg">
                 <div className="text-5xl text-center py-5">
                     <div className="mx-auto max-w-md p-5">
