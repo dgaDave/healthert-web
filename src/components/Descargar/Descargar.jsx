@@ -19,7 +19,8 @@ const Descargar = () => {
     ]
     return (
         
-        <div className='justify-center inline-block bg-slate-900'>
+        <div className='flex justify-center'>
+            <div className='justify-center inline-block bg-slate-900 max-w-screen-xl'>
             <div className='flex grid-cols-2 items-center content-center mt-8 ml-0 md:ml-20'>{/*flex grid-cols-2 gap-2  */}
                 <div className='flex justify-center ml-8  h-20 w-20 min-w-max min-h-max md:h-32 md:w-32 lg:h-40 lg:w-40 transform duration-700 '>
                     <img src={Logo} />
@@ -42,7 +43,7 @@ const Descargar = () => {
                         {listImg.map((s)=>(<img src={s} key={s} className='w-96 rounded-3xl'/>))}
                     </Carousel>
                 </div>
-                <div className='flex justify-center mx-8 text-black  text-xs text-justify font-medium md:text-sm lg:text-base md:mt-24 md:justify-start md:mr-20 dark:text-gray-200'>
+                <div className='flex justify-center mx-10 text-black  text-xs text-justify font-medium md:text-sm lg:text-base md:mt-24 md:justify-start md:mr-20 dark:text-gray-200'>
                     <p>
                         Healthert permite al usuario realizar un seguimiento de los datos médicos de algún familiar o paciente en tiempo real.<br/><br/>
                         Solo descarga la aplicación en tu telefono móvil y conecta con un reloj inteligente para tener un monitoreo del ritmo cardiaco, ubicación y recordatorio de medicamentos.<br/><br/>
@@ -51,6 +52,7 @@ const Descargar = () => {
                 </div>
 
             </div>
+        </div>
         </div>
     );
 }
