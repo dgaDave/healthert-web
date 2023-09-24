@@ -16,8 +16,6 @@ import{Planes} from "./components/Planes/Planes"
 function App() {
   return (
     <>
-        <Planes></Planes>
-        <Funciones></Funciones>
     </>
   )
 }

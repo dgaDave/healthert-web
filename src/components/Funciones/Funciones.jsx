@@ -23,7 +23,7 @@ export const Funciones = () => {
         },
         {
             nombre: "Recibe una alerta",
-            descripcion: "El sistema puede captar alertas manuales o automáticas, al recibirlas y acceder a ellas, podrás ver la ubicación de la persona en riesgo dentro de google maps .",
+            descripcion: "El sistema puede captar alertas manuales o automáticas, al recibirlas y acceder a ellas, podrás ver la ubicación de la persona en riesgo dentro de google maps.",
             img: recibeAlerta,
         },
 
@@ -103,12 +103,12 @@ export const Funciones = () => {
     return (
         <>
         <div className="flex justify-center dark:bg-gray-900 ">
-            <div className="dark:bg-gray-900 text-moradoOscuro dark:text-white font-roboto font-bold max-w-screen-lg">
+            <div className="dark:bg-gray-900 text-moradoOscuro dark:text-white font-roboto max-w-screen-lg">
                 <div className="text-5xl text-center py-5">
                     <div className="mx-auto max-w-md p-5">
                         <img src={logo} alt="Logo corazón" className="w-20 h-20 mx-auto" />
                     </div>
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl">FUNCIONES</h1>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold">FUNCIONES</h1>
                 </div>
                 <p className="text-gray-400 dark:text-verde text-xl md:text-2xl sm:text-2xl text-center font-roboto font-bold py-5">
                     Aprovecha al máximo las funciones de Healthert </p>
@@ -117,9 +117,9 @@ export const Funciones = () => {
                 </div>
                 <br /><br /><br /><br /><br /><br />
                 <div className="px-5">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-center my-4">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl  text-center font-bold">
                         ¿Qué funciones tengo?</h1>
-                    <p className="text-gray-400 dark:text-verde text-xl md:text-2xl sm:text-2xl text-center font-roboto font-bold py-5">
+                    <p className="text-gray-400 dark:text-verde text-xl md:text-2xl sm:text-2xl text-center font-bold py-5">
                         Según tu plan, las funciones cambiarán, sin embargo, en Healthert pensamos en ayudar, sin importar el plan, podrás cuidar a los tuyos. </p>
                 </div>
 

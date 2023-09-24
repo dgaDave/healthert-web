@@ -6,8 +6,7 @@ const AccordeonCard = ({ item, index, activeIndex }) => {
           data-active-classes="bg-blue-100 
                                dark:bg-gray-800 
                                text-blue-600 
-                               dark:text-white
-                               "
+                               dark:text-white"
           key={index}
           className={`overflow-hidden transition-all duration-300 ${
             index === activeIndex ? 'max-h-96' : 'max-h-0'
@@ -23,7 +22,7 @@ const AccordeonCard = ({ item, index, activeIndex }) => {
             index === activeIndex ? 'opacity-100' : 'opacity-70'
           }`}
           >
-            <p className="mb-2 text-gray-400 dark:text-white font-bold font-roboto">
+            <p className="mb-2 text-gray-400 dark:text-white font-roboto">
               {item.contenido}
             </p>
             <img

@@ -13,7 +13,7 @@ const AccordeonTitle = ({ item, index, activeIndex, onClick }) => {
                       border border-b border-verde rounded-t rounded-b
                       
                       hover:bg-gray-100 
-                      dark:bg-black
+                      dark:bg-gray-800
                       dark:border-white
                       dark:hover:bg-gray-700 duration-300"
           onClick={() => onClick(index)}>

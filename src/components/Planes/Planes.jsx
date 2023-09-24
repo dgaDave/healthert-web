@@ -55,7 +55,7 @@ export const Planes = () => {
         </div>
         <p className="text-gray-400 dark:text-verde text-xl md:text-1xl sm:text-2xl text-center font-roboto font-bold py-5">
             Manejamos distintos planes para cada tipo de usuario</p>
-        <div className="flex justify-center dark:bg-gray-900">
+        <div className=" dark:bg-gray-900">
         <div className=" p-5 sm:p-12">
           <TablaComparativa/>
         </div>
@@ -63,7 +63,7 @@ export const Planes = () => {
         <h2 className="text-moradoOscuro dark:text-white text-xl md:text-4xl sm:text-2xl font-roboto font-bold text-center py-5">
             DESCRIPCIÓN DE LOS PLANES </h2> 
        <div className="flex justify-center dark:bg-gray-900">    
-            <div className="p-5 sm:p-12">
+            <div className="p-2 sm:p-5">
               <Accordeon items={items}/>
             </div>
         </div>  
