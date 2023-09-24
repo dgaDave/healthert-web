@@ -1,7 +1,7 @@
-const Hearth = () => {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" className="w-24 h-24 " viewBox="0 0 783 784">
-<path stroke="#5fe013" strokeWidth="2.00" fill="none" strokeLinecap="butt" vectorEffect="non-scaling-stroke" d="
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 783 784">
+<path stroke="#5fe013" stroke-width="2.00" fill="none" stroke-linecap="butt" vector-effect="non-scaling-stroke" d="
   M 145.25 410.54
   L 135.05 410.71
   Q 134.23 410.72 135.00 410.99
@@ -752,7 +752,3 @@ const Hearth = () => {
   Z"
 />
 </svg>
-  )
-}
-
-export default Hearth

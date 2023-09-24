@@ -3,6 +3,7 @@ import "./ListServ.css"
 import Hearth from "./svg/Hearth"
 import Geo from "./svg/Geo"
 import Plus from "./svg/Plus"
+import Hearth2 from "./svg/Logo1.svg"
 
 const Items = ({svg,title,text}) => {
     return(
@@ -43,8 +44,8 @@ const ListServ = ()=> {
     ]
     const [arreglo, setArreglo] = useState(listadoServicios)
   return (
-    <div className="flex justify-center">
-        <div className="grid grid-cols-1 gap-1 place-content-center lg:grid-cols-3 max-w-screen-xl">
+    <div className="flex justify-center dark:bg-slate-900">
+        <div className="grid grid-cols-1 gap-1 place-content-center lg:grid-cols-3 max-w-screen-xl  mx-5 md:mx-10">
             {arreglo.map(item => <Items key={item.title} svg={item.svg} title={item.title} text={item.text}></Items>)}
         </div>
     </div>
