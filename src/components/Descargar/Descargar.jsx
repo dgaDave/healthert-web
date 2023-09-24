@@ -19,13 +19,13 @@ const Descargar = () => {
     ]
     return (
         
-        <div className='justify-center'>
-            <div className='flex grid-cols-2 gap-2'>
-                <div className='flex justify-center ml-8  mt-8 h-16 w-16 min-w-max min-h-max md:h-32 md:w-32 lg:h-40 lg:w-40 transform duration-700 '>
+        <div className='justify-center inline-block bg-slate-900'>
+            <div className='flex grid-cols-2 items-center content-center mt-8 ml-0 md:ml-20'>{/*flex grid-cols-2 gap-2  */}
+                <div className='flex justify-center ml-8  h-20 w-20 min-w-max min-h-max md:h-32 md:w-32 lg:h-40 lg:w-40 transform duration-700 '>
                     <img src={Logo} />
                 </div>
-                <div className='grip grip-cols-2   justify-center ml-3 mt-8 h-16 w-16 md:ml-10 md:mt-10 lg:ml-20 '>
-                    <div className='flex text-black text-2xl font-semibold  md:text-4xl lg:text-5xl transform duration-700 dark:text-gray-200'>
+                <div className='grip grip-cols-2  ml-4 justify-center md:ml- md:mt-10 lg:ml-20 '>
+                    <div className='flex text-black  text-xl font-semibold  md:text-4xl lg:text-5xl transform duration-700 dark:text-gray-200'>
                         <h1>Healthert</h1>
                     </div>
                     <div className='flex justify-center text-black text-xs w-max  md:text-sm lg:text-base dark:text-gray-200'>
@@ -36,13 +36,13 @@ const Descargar = () => {
                     </div>
                 </div>
             </div>
-            <div className='grid grid-cols-1 gap-0 md:grid-cols-2'>
-                <div className='flex justify-center mt-16 md:mt-20 md:ml-6 md:p-2'>
-                    <Carousel>
+            <div className='grid grid-cols-1 items-center content-center gap-0 md:grid-cols-2'>
+                <div className='flex justify-center mt-16 md:mt-20 md:ml-6 md:p-2 mb-6'>
+                    <Carousel autoSlide={true}>
                         {listImg.map((s)=>(<img src={s} key={s} className='w-96 rounded-3xl'/>))}
                     </Carousel>
                 </div>
-                <div className='flex justify-center mt-4 mx-8 text-black text-xs text-justify font-medium md:text-sm lg:text-base md:mt-24 md:justify-start md:mr-20 dark:text-gray-200'>
+                <div className='flex justify-center mx-8 text-black  text-xs text-justify font-medium md:text-sm lg:text-base md:mt-24 md:justify-start md:mr-20 dark:text-gray-200'>
                     <p>
                         Healthert permite al usuario realizar un seguimiento de los datos médicos de algún familiar o paciente en tiempo real.<br/><br/>
                         Solo descarga la aplicación en tu telefono móvil y conecta con un reloj inteligente para tener un monitoreo del ritmo cardiaco, ubicación y recordatorio de medicamentos.<br/><br/>
