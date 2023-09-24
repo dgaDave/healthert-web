@@ -22,11 +22,13 @@ export const Planes = () => {
           {
             titulo: "Plan Personal",
             precio: 100,
-            periodicidad: "/mes",
+            periodo: "/mes",
             caracteristicas: [
               "Cuida a tus seres queridos",
-              "Agrega más de un paciente",
+              "Agrega más de un paciente por suscripción",
               "Monitorea de uno en uno",
+              "Ideal para un cuidado personal",
+              "Cuidado desde la palma de tu mano",
             ],
           },
           {
@@ -44,22 +46,26 @@ export const Planes = () => {
         ]
   return (
    <>
-    <div className="dark:bg-gray-900">
+    <div className="dark:bg-slate-900">
         <div className="text-moradoOscuro dark:text-white font-roboto font-bold text-5xl text-center py-5">
           <div className="mx-auto max-w-md p-5">
             <img src={logo} alt="Logo corazón" className="w-20 h-20 mx-auto" />
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl">NUESTROS PLANES</h1>
         </div>
-        <p className="text-gray-400 dark:text-verde text-xl md:text-3xl sm:text-2xl text-center font-roboto font-bold py-5">
+        <p className="text-gray-400 dark:text-verde text-xl md:text-1xl sm:text-2xl text-center font-roboto font-bold py-5">
             Manejamos distintos planes para cada tipo de usuario</p>
-        <div className="p-5 sm:p-12">
+        <div className=" dark:bg-gray-900">
+        <div className=" p-5 sm:p-12">
           <TablaComparativa/>
+        </div>
         </div>
         <h2 className="text-moradoOscuro dark:text-white text-xl md:text-4xl sm:text-2xl font-roboto font-bold text-center py-5">
             DESCRIPCIÓN DE LOS PLANES </h2> 
-        <div className="p-5">
-          <Accordeon items={items}/>
+       <div className="flex justify-center dark:bg-gray-900">    
+            <div className="p-2 sm:p-5">
+              <Accordeon items={items}/>
+            </div>
         </div>  
         <div className="p-5">
           <h2 className="font-roboto font-bold text-xl md:text-4xl sm:text-2xl text-center py-5 text-moradoOscuro dark:text-white">
