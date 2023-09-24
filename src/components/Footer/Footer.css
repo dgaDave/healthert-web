@@ -1,0 +1,7 @@
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+
+.glow{
+    @apply dark:hover:drop-shadow-glow transition-all ease-in-out duration-200;
+}
