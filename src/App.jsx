@@ -13,6 +13,8 @@ import NavBar from './components/NavBar/NavBar'
 import Descargar from './components/Descargar/Descargar'
 import Footer from './components/Footer/Footer'
 import ListServ from './components/ListServ/ListServ'
+import Planes from './components/Planes/Planes'
+
 
 function App () {
   return (
@@ -21,6 +23,7 @@ function App () {
     <Inicio/>
     <Descargar/>
     <ListServ/>
+    <Planes/>
     <Footer/>
     </>
   )

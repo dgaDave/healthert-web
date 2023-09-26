@@ -9,9 +9,9 @@ export const Accordeon = ({ items }) => {
     setActiveIndex(index === activeIndex ? null : index);
   }
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center max-w-screen-xl">
       {items.map((item, index) => (
-        <div key={index} className="mg:max-w-md lg:w-3/4 sm:w-3/4">
+        <div key={index}>
           <AccordeonTitle
             item={item}
             index={index}

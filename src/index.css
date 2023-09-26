@@ -12,20 +12,20 @@
         @apply bg-white dark:bg-slate-900;
     }
 
-    
+
 }
 
-@layer components{
-    .btn-primary{
-        @apply m-2 text-white  bg-verde text-xl py-3  px-4 inline-block rounded-full hover:bg-green-700 hover:transition-all duration-300 hover:drop-shadow-xl hover:scale-105 ;
+@layer components {
+    .btn-primary {
+        @apply m-2 text-white bg-verde text-xl py-3 px-4 inline-block rounded-full hover:bg-green-700 hover:transition-all duration-300 hover:drop-shadow-xl hover:scale-105;
     }
 }
 
-@layer components{
-  .btn-card{
-         @apply text-white m-2 bg-verde hover:bg-green-700 focus:ring-4 focus:outline-none font-medium rounded-full text-2xl px-5 py-2.5 inline-block justify-center w-full text-center     
-    } 
-          
+@layer components {
+    .btn-card {
+        @apply text-white m-2 bg-verde hover:bg-green-700 focus:ring-4 focus:outline-none font-medium rounded-full text-2xl px-5 py-2.5 inline-block justify-center w-full text-center
+    }
+
 
 
 
