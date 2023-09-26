@@ -11,7 +11,7 @@
         font-family: Roboto, sans-serif;
         color: #a8a8a8;
 
-        @apply bg-white dark:bg-neutral-800;
+        @apply bg-white dark:bg-slate-900;
     }
 
     

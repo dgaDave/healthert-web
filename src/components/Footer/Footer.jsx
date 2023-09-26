@@ -3,7 +3,7 @@ import "./Footer.css"
 
 const Footer = () => {
     return (
-        <footer className='p-4 md:p-8 flex justify-center text-normal text-base md:text-xl bg-neutral-800 dark:border-t-2 border-verde w-full '>
+        <footer className='p-4 md:p-8 flex justify-center text-normal text-base md:text-xl bg-slate-900 dark:border-t-2 border-verde w-full '>
             <div className='columns-3 w-full md:max-w-screen-lg'>
                 <div className=''>
                     <a href="#" className='glow'>Tu privacidad</a>
