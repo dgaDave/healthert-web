@@ -9,16 +9,12 @@
 // Nosotros
 // Footer
 
-import NavBar from './components/NavBar/NavBar'
-import Inicio from './components/Inicio/Inicio'
-import Footer from './components/Footer/Footer'
+import ListServ from "./components/ListServ/ListServ"
 
 function App () {
   return (
     <>
-    <NavBar/>
-    <Inicio/>
-    <Footer/>
+    <ListServ></ListServ>
     </>
     
   )
