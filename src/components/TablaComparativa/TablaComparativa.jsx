@@ -1,7 +1,7 @@
 export const TablaComparativa = () => {
     return (
-        <div id="detailed-pricing" className="w-full overflow-x-auto font-roboto lg:flex justify-center ">
-            <div className="overflow-hidden min-w-max w-full md:w-auto">
+        <div id="detailed-pricing" className="w-full overflow-x-auto font-roboto inline-block max-w-screen-xl">
+            <div className="overflow-hidden min-w-max w-full ">
                 <div className="grid grid-cols-3 p-4 text-sm font-medium bg-gray-100 border-t border-b border-gray-200 gap-x-16 dark:bg-black dark:border-white-70">
                     <div className="text-verde dark:text-white text-2xl flex items-center justify-center font-roboto font-bold font-m ">Características</div>
                     <div className="text-verde dark:text-white  text-2xl flex items-center justify-center font-roboto font-bold font-m ">Plan Personal</div>

@@ -56,19 +56,19 @@ const Planes = () => {
         <p className="text-gray-400 dark:text-verde text-xl md:text-1xl sm:text-2xl text-center font-roboto font-bold py-5">
           Manejamos distintos planes para cada tipo de usuario</p>
         <div className=" dark:bg-gray-900">
-          <div className=" p-5 sm:p-12">
+          <div className="flex justify-center px-6 md:px-12">
             <TablaComparativa />
           </div>
         </div>
-        <h2 className="text-moradoOscuro dark:text-white text-xl md:text-4xl sm:text-2xl font-roboto font-bold text-center py-5">
+        <h2 className="text-moradoOscuro dark:text-white md:text-4xl text-2xl font-roboto font-bold text-center py-5">
           DESCRIPCIÓN DE LOS PLANES </h2>
         <div className="flex justify-center dark:bg-gray-900">
-          <div className="p-2 sm:p-5">
+          <div className="px-6 md:px-12">
             <Accordeon items={items} />
           </div>
         </div>
-        <div className="p-5">
-          <h2 className="font-roboto font-bold text-xl md:text-4xl sm:text-2xl text-center py-5 text-moradoOscuro dark:text-white">
+        <div className="p-6 md:px-12">
+          <h2 className="font-roboto font-bold md:text-4xl text-2xl text-center py-5 text-moradoOscuro dark:text-white">
             PRECIOS </h2>
           <CardPlanes planes={planes} />
         </div>
