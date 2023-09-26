@@ -1,9 +1,0 @@
-@tailwind components;
-@tailwind base;
-@tailwind utilities;
-
-
-
-.contenedor{
-    @apply flex dark:bg-slate-900;
-}

@@ -12,6 +12,7 @@ import Inicio from './components/Inicio/Inicio'
 import NavBar from './components/NavBar/NavBar'
 import Descargar from './components/Descargar/Descargar'
 import Footer from './components/Footer/Footer'
+import ListServ from './components/ListServ/ListServ'
 
 function App () {
   return (
@@ -19,6 +20,7 @@ function App () {
     <NavBar/>
     <Inicio/>
     <Descargar/>
+    <ListServ/>
     <Footer/>
     </>
   )

@@ -3,8 +3,6 @@ import "./ListServ.css"
 import Hearth from "./svg/Hearth"
 import Geo from "./svg/Geo"
 import Plus from "./svg/Plus"
-import Hearth2 from "./svg/Logo1.svg"
-
 const Items = ({svg,title,text}) => {
     return(
         <div className="contenedor">
