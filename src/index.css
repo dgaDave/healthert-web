@@ -21,3 +21,12 @@
     }
 }
 
+@layer components{
+  .btn-card{
+         @apply text-white m-2 bg-verde hover:bg-green-700 focus:ring-4 focus:outline-none font-medium rounded-full text-2xl px-5 py-2.5 inline-block justify-center w-full text-center     
+    } 
+          
+
+
+
+}

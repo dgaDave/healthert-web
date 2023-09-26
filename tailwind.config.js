@@ -12,7 +12,9 @@ export default {
       colors: {
         'verde': '#6FD81C',
         'morado': '#D914DB',
-        'normal':'#A8A8A8'
+        'normal':'#A8A8A8',
+        'moradoOscuro': '#8D008F'
+
       },
     },
     fontFamily: {
@@ -20,5 +22,7 @@ export default {
     }
   },
   plugins: [],
+
+  
 }
 
