@@ -1,0 +1,19 @@
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+
+.contenedor{
+    @apply flex flex-col m-2 p-5 border-2 dark:border-slate-700 rounded-lg bg-gray-100 dark:bg-slate-900 dark:text-white transform  duration-700 motion-safe:hover:scale-105 lg:m-4 shadow-md;
+}
+
+.contenedor--svg{
+    @apply flex justify-center m-5;
+}
+
+.contenedor--title{
+    @apply flex justify-center place-content-center text-center m-5 font-bold text-3xl text-verde;
+}
+
+.contenedor--text{
+    @apply grid leading-5  justify-center text-center font-normal text-base m-6 text-gray-500 dark:text-gray-200;
+}
