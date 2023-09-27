@@ -2,6 +2,7 @@ import Button from "../Button/Button"
 export const CardPlanes = ({planes}) => {
   return (
     <div className="mx-auto flex flex-col items-center md:items-stretch md:flex-row justify-center lg:space-x-12 md:space-x-9 md:space-y-0 space-y-8">
+    <div className="mx-auto flex flex-col items-center md:items-stretch md:flex-row justify-center lg:space-x-12 md:space-x-9 md:space-y-0 space-y-8">
       {planes.map((plan, index) => (
         <div
           key={index}
@@ -37,6 +38,7 @@ export const CardPlanes = ({planes}) => {
           </div>
         </div>
       ))}
+    </div> 
     </div> 
   )
 }
