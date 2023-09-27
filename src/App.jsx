@@ -13,7 +13,7 @@ import NavBar from './components/NavBar/NavBar'
 import Footer from './components/Footer/Footer'
 import ListServ from './components/ListServ/ListServ'
 import Planes from './components/Planes/Planes'
-
+import Funciones from './components/Funciones/Funciones'
 
 function App () {
   return (
@@ -22,6 +22,7 @@ function App () {
     <Inicio/>
     <ListServ/>
     <Planes/>
+    <Funciones/>
     <Footer/>
     </>
   )

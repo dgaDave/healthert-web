@@ -4,17 +4,11 @@
 
 .contenedor{
     @apply  max-w-md bg-white 
-            border border-gray-200 rounded-t-2xl rounded-b-2xl 
-          hover:bg-gray-100
-            rounded-lg shadow 
-            dark:shadow
+            border border-gray-200 rounded-2xl dark:border-slate-700
+            shadow-md 
             dark:bg-gray-800
-            dark:border-white
-            dark:hover:bg-gray-700
             transform  duration-700
-            motion-safe:hover:scale-105 lg:m-4
-             
-           
+            hover:scale-105 lg:m-4
 }
 
 .textoTitulo{
@@ -22,7 +16,6 @@
     @apply  mb-2 text-xl 
             md:text-2xl 
             lg:text-3xl 
-            font-roboto
             font-bold 
             tracking-tight
           text-verde
@@ -33,8 +26,6 @@
 .texto{
     @apply  mb-2 
             lg:text-lg
-            md:text-sm
-            font-roboto
           text-gray-400
           dark:text-white
 }

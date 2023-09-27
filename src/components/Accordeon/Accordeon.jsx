@@ -11,7 +11,7 @@ export const Accordeon = ({ items }) => {
   return (
     <div className="flex flex-col items-center max-w-screen-xl">
       {items.map((item, index) => (
-        <div key={index} className="mg:max-w-md lg:w-3/4 sm:w-3/4">
+        <div key={index} className="w-full">
           <AccordeonTitle
             item={item}
             index={index}

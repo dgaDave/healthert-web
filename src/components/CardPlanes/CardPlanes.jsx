@@ -7,7 +7,7 @@ export const CardPlanes = ({planes}) => {
         <div
           key={index}
           className="w-full max-w-md p-4 g-white border border-gray-200 rounded-2xl bg-white shadow-md md:p-8 dark:bg-gray-800 dark:border-slate-700 transition-transform hover:scale-105 duration-300">
-          <h5 className="mb-4 text-xl font-roboto font-bold text-center">
+          <h5 className="mb-4 text-xl  font-bold text-center">
             {plan.titulo} </h5>
           <div className="flex items-baseline justify-center">
             <span className="text-3xl font-semibold text-verde dark:text-verde">$</span>
@@ -22,14 +22,14 @@ export const CardPlanes = ({planes}) => {
             {plan.caracteristicas.map((caracteristica, idx) => (
               <li
                 key={idx}
-                className="flex space-x-3 items-center font-roboto font-bold leading-tight text-center">
+                className="flex space-x-3 items-center  font-bold leading-tight text-center">
                 <svg
                   className="flex-shrink-0 w-4 h-4 text-verde dark:text-morado"
                   aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor" viewBox="0 0 20 20" >
                   <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                 </svg>
-                <span>{caracteristica}</span>
+                <span className="text-start">{caracteristica}</span>
               </li>
             ))}
           </ul>
