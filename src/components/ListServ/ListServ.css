@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .contenedor{
-    @apply flex flex-col my-2 p-5 border-2 dark:border-slate-700 rounded-lg bg-gray-100 dark:bg-gray-800 dark:text-white transform  duration-700 motion-safe:hover:scale-105 lg:m-4 shadow-md;
+    @apply flex flex-col my-2 p-5 border-2 bg-white border-gray-200 dark:border-slate-700 rounded-2xl  dark:bg-gray-800 dark:text-white transform  duration-300 hover:scale-105 lg:m-4 shadow-md;
 }
 
 .contenedor--svg{
@@ -15,5 +15,5 @@
 }
 
 .contenedor--text{
-    @apply grid leading-5  justify-center text-center font-normal  m-6 text-gray-500 dark:text-gray-200;
+    @apply grid leading-5  justify-center text-center font-normal  m-6;
 }

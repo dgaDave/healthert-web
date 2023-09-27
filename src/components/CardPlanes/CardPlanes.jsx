@@ -1,11 +1,11 @@
-import ButtonCard from "../Button/ButtonCard/ButtonCard"
+import Button from "../Button/Button"
 export const CardPlanes = ({planes}) => {
   return (
     <div className="mx-auto flex flex-col items-center md:items-stretch md:flex-row justify-center lg:space-x-12 md:space-x-9 md:space-y-0 space-y-8">
       {planes.map((plan, index) => (
         <div
           key={index}
-          className="w-full max-w-md p-4 g-white border border-gray-200 rounded-t-2xl rounded-b-2xl shadow md:p-8 dark:bg-gray-800 dark:border-slate-700 transition-transform hover:scale-105 duration-300">
+          className="w-full max-w-md p-4 g-white border border-gray-200 rounded-2xl bg-white shadow-md md:p-8 dark:bg-gray-800 dark:border-slate-700 transition-transform hover:scale-105 duration-300">
           <h5 className="mb-4 text-xl font-roboto font-bold text-center">
             {plan.titulo} </h5>
           <div className="flex items-baseline justify-center">
@@ -33,7 +33,7 @@ export const CardPlanes = ({planes}) => {
             ))}
           </ul>
           <div className="flex justify-center">
-            <ButtonCard text="¡Descarga y contrata!" className="btn-card" />
+            <Button text="¡Contrata!" className="btn-card" />
           </div>
         </div>
       ))}

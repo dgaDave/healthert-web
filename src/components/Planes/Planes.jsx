@@ -67,7 +67,7 @@ const Planes = () => {
             <Accordeon items={items} />
           </div>
         </div>
-        <div className="p-6 md:px-12">
+        <div className="px-6 md:px-12">
           <h2 className="font-roboto font-bold md:text-4xl text-2xl text-center py-5 text-moradoOscuro dark:text-white">
             PRECIOS </h2>
           <CardPlanes planes={planes} />
