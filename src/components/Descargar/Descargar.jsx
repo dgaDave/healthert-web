@@ -6,7 +6,6 @@ import DatosUs from './img/reg.png';
 import SmarVerde from './img/r.png';
 import Mapa from './img/ubicacion.png';
 import './Descargar.css'
-import { useState } from 'react';
 import Carousel from './Carousel';
 
 const Descargar = () => {
@@ -43,7 +42,7 @@ const Descargar = () => {
                         {listImg.map((s)=>(<img src={s} key={s} className='w-96 rounded-3xl'/>))}
                     </Carousel>
                 </div>
-                <div className='flex justify-center mx-10 text-black  text-xs text-justify font-medium md:text-sm lg:text-base md:mt-24 md:justify-start md:mr-20 dark:text-gray-200'>
+                <div className='flex justify-center mx-10 text-black font-medium md:mt-24 md:justify-start md:mr-20 dark:text-gray-200'>
                     <p>
                         Healthert permite al usuario realizar un seguimiento de los datos médicos de algún familiar o paciente en tiempo real.<br/><br/>
                         Solo descarga la aplicación en tu telefono móvil y conecta con un reloj inteligente para tener un monitoreo del ritmo cardiaco, ubicación y recordatorio de medicamentos.<br/><br/>

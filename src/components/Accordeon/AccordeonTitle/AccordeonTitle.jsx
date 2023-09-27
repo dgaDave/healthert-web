@@ -10,11 +10,11 @@ const AccordeonTitle = ({ item, index, activeIndex, onClick }) => {
         type="button"
         className=" transition-all flex items-center justify-between w-full p-5  
                     text-3xl text-left font-bold font-roboto
-                    border border-b border-verde rounded-t rounded-b
+                    border border-b border-verde rounded-lg
                     
                     hover:bg-gray-100 
                     dark:bg-gray-800
-                    dark:border-white
+                    dark:border-slate-700
                     dark:hover:bg-gray-700 duration-300"
         onClick={() => onClick(index)}>
         <span>{item.titulo}</span>

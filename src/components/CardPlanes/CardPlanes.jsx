@@ -5,15 +5,15 @@ export const CardPlanes = ({planes}) => {
       {planes.map((plan, index) => (
         <div
           key={index}
-          className="w-full max-w-md p-4 g-white border border-gray-200 rounded-t-2xl rounded-b-2xl shadow md:p-8 dark:bg-gray-800 dark:border-gray-700 transition-transform hover:scale-105 duration-300">
-          <h5 className="mb-4 text-xl font-roboto font-bold text-gray-400 dark:text-gray-300 text-center">
+          className="w-full max-w-md p-4 g-white border border-gray-200 rounded-t-2xl rounded-b-2xl shadow md:p-8 dark:bg-gray-800 dark:border-slate-700 transition-transform hover:scale-105 duration-300">
+          <h5 className="mb-4 text-xl font-roboto font-bold text-center">
             {plan.titulo} </h5>
-          <div className="flex items-baseline text-verde dark:text-verde justify-center">
-            <span className="text-3xl font-semibold">$</span>
+          <div className="flex items-baseline justify-center">
+            <span className="text-3xl font-semibold text-verde dark:text-verde">$</span>
             <span className="text-5xl font-extrabold tracking-tight text-verde dark:text-verde">
               {plan.precio}
             </span>
-            <span className="ml-1 text-xl font-bold text-gray-400 dark:text-gray-400">
+            <span className="ml-1 text-xl font-bold ">
               {plan.periodo}
             </span>
           </div>
@@ -21,7 +21,7 @@ export const CardPlanes = ({planes}) => {
             {plan.caracteristicas.map((caracteristica, idx) => (
               <li
                 key={idx}
-                className="flex space-x-3 items-center text-base font-roboto font-bold leading-tight text-gray-400 dark:text-gray-400 text-center">
+                className="flex space-x-3 items-center font-roboto font-bold leading-tight text-center">
                 <svg
                   className="flex-shrink-0 w-4 h-4 text-verde dark:text-morado"
                   aria-hidden="true" xmlns="http://www.w3.org/2000/svg"

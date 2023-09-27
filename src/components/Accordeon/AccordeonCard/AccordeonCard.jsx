@@ -3,20 +3,15 @@ const AccordeonCard = ({ item, index, activeIndex }) => {
     <div
       id={`accordion-color-${index}`}
       data-accordion="collapse"
-      data-active-classes="bg-blue-100 
-                  dark:bg-gray-800 
-                            text-blue-600    
-                                                      dark:text-white"
       key={index}
-      className={`overflow-hidden transition-all duration-300 ${index === activeIndex ? 'max-h-96' : 'max-h-0'
+      className={`overflow-hidden transition-all duration-300 ${index === activeIndex ? 'max-h-[28rem]' : 'max-h-0'
         }`}
     >
       <div
-        className={`p-5 border-r border-t 
-                    border-verde border-l 
-                      rounded-b border-b rounded-t
-                    dark:border-white 
-                    dark:bg-purple-500
+        className={`p-5
+                    border-verde border-l rounded-lg border-2
+                    dark:border-slate-700 
+                    dark:bg-slate-900
                     text-morado ${index === activeIndex ? 'opacity-100' : 'opacity-70'
           }`}
       >
@@ -25,7 +20,7 @@ const AccordeonCard = ({ item, index, activeIndex }) => {
         </p>
         <img
           src={item.img}
-          className="mx-auto max-w-full h-auto md:max-w-sm md:h-auto lg:max-w-md lg:h-auto xl:max-w-lg xl:h-auto rounded-lg shadow-xl"
+          className="mx-auto max-w-xs h- md:max-w-sm md:h-auto lg:max-w-md lg:h-auto xl:max-w-lg xl:h-auto rounded-lg shadow-xl"
           alt={`Imagen para ${item.titulo}`}
         />
       </div>

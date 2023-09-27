@@ -15,5 +15,5 @@
 }
 
 .contenedor--text{
-    @apply grid leading-5  justify-center text-center font-normal text-base m-6 text-gray-500 dark:text-gray-200;
+    @apply grid leading-5  justify-center text-center font-normal  m-6 text-gray-500 dark:text-gray-200;
 }
