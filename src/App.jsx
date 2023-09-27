@@ -21,7 +21,6 @@ function App () {
     <>
     <NavBar/>
     <Inicio/>
-    <Descargar/>
     <ListServ/>
     <Planes/>
     <Footer/>
