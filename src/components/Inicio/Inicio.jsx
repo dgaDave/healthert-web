@@ -1,4 +1,5 @@
 import React from 'react'
+import mck from '../../assets/images/mck.png'
 
 const Inicio = () => {
   return (
@@ -16,7 +17,7 @@ const Inicio = () => {
               className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
               <img
                 alt=""
-                src="mck.png"
+                src={mck}
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
