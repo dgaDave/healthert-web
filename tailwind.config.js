@@ -16,7 +16,16 @@ export default {
         'moradoOscuro': '#8D008F'
 
       },
-    },
+      keyframes :{
+        floating: {
+          '0%, 100%': {transform: 'translateY(0px);'},
+          '50%': {transform: 'translateY(1rem);'},
+        }
+      },
+      animation: {
+        floating:'floating 5s ease-in-out infinite',//ease-in-out
+      }
+  },
     fontFamily: {
       'roboto': 'Roboto, sans-serif'
     }

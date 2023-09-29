@@ -15,12 +15,12 @@ const Inicio = () => {
                 Aplicación móvil de monitoreo y alerta remota
               </p>
             </div>
-            <div className='flex gap-4'>
-              <div className='items-center content-center rounded-xl'>
-                <img alt='Dispositivos' src={mckSmart} className='h-80'></img>  
+            <div className='flex gap-0 justify-center items-center'>
+              <div className='flex justify-center content-center animate-floating'>
+                <img alt='Dispositivo' src={mckSmart} className='h-auto w-72'></img>  
               </div>
-              <div className='items-center content-center rounded-xl'>
-                <img alt='Dispositivos' src={mckphone} className='h-80'></img>  
+              <div className='flex justify-center content-center animate-floating'>
+                <img alt='Dispositivo' src={mckphone} className='h-auto w-80'></img>  
               </div>
             </div>
           </div>
