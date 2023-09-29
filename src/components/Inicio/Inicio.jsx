@@ -21,7 +21,7 @@ const Inicio = () => {
             </div>
           </div>
           <div className='items-center content-center'>
-              <img alt='Dispositivos' src={mck} className='h-80'></img>  
+              <img alt='Dispositivos' src={mck} className='h-auto w-auto'></img>  
           </div>
         </div>
       </div>
