@@ -10,7 +10,7 @@ const NavBar = () => {
     <nav className='h-20 relative md:h-24 z-10 py-2 px-2 lg:px-4 xl:px-6 bg-white dark:bg-slate-900 shadow-lg flex items-center justify-between'>
       {/* Falta el logotipo aqui */}
       <a href='#'>
-        <span className='text-3xl font-semibold md:text-4xl  text-verde'>HEALTHERT</span>
+        <span className='text-3xl font-semibold md:text-4xl text-verde'>HEALTHERT</span>
       </a>
       <input type="checkbox" id="menu" checked={checked} readOnly onClick={clickMenu} className='hidden peer/menu' />
       <label className='cursor-pointer rounded-xl md:hidden border-verde peer-checked/menu:border-2 transition-all duration-100' htmlFor="menu">
