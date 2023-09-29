@@ -1,5 +1,7 @@
 import React from 'react'
-import mck from '../../assets/images/mck.png'
+import mckphone from '../../assets/images/mckPhone1.png'
+import mckSmart from '../../assets/images/mckSmart1.png'
+
 
 const Inicio = () => {
   return (
@@ -13,13 +15,13 @@ const Inicio = () => {
                 Aplicación móvil de monitoreo y alerta remota
               </p>
             </div>
-            <div
-              className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
-              <img
-                alt=""
-                src={mck}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
+            <div>
+              <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
+                <img alt="" src={mckSmart} className="absolute inset-0 h-full w-full object-cover"/>              
+              </div>
+              <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
+                <img alt="" src={mckphone} className="absolute inset-0 h-full w-full object-cover"/>
+              </div>
             </div>
           </div>
         </div>
