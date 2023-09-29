@@ -1,29 +1,33 @@
 import React from 'react'
 import mck from '../../assets/images/mck.png'
+import Button from '../Button/Button'
+import PlayG from "./svg/PlayGoogle"
 
 const Inicio = () => {
   return (
     <>
-      <div className='flex'>
-        <div className="relative mx-auto max-w-screen-xl px-6 py-8 sm:py-12 sm:px-8 lg:py-16 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-            <div className="lg:py-24">
-              <h2 className="text-3xl font-bold text-center text-verde sm:text-7xl">HEALTHERT</h2>
-              <p className="mt-4 text-center sm:text-2xl">
-                Aplicación móvil de monitoreo y alerta remota
-              </p>
+    <div className='flex justify-center'>
+      <div className='flex justify-center my-20 max-w-screen-lg'>
+        <div className='grid grid-cols-1 justify-center items-center lg:grid-cols-2 lg:gap-36'>
+          <div className='grid justify-center'>
+            <div className='text-5xl font-bold text-center text-verde md:text-7xl'>
+              <h2>HEALTHERT</h2>
             </div>
-            <div
-              className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
-              <img
-                alt=""
-                src={mck}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
+            <div className='text-center text-base md:text-xl'>
+              <p>Aplicación móvil de monitoreo y alerta remota</p>
             </div>
+            <div className='flex w-full justify-center m-4 font-bold'>
+              <Button link={""} text={"Descargar"} svg={<PlayG></PlayG>}></Button>
+            </div>
+          </div>
+          <div className='items-center content-center'>
+              <img alt='Dispositivos' src={mck} className='h-80'></img>  
           </div>
         </div>
       </div>
+    </div>
+
+    
     </>
   )
 }
