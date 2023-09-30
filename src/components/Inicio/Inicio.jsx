@@ -17,10 +17,10 @@ const Inicio = () => {
             </div>
             <div className='flex gap-0 justify-center items-center'>
               <div className='flex justify-center content-center animate-floating'>
-                <img alt='Dispositivo' src={mckSmart} className='h-auto w-72'></img>  
+                <img alt='Dispositivo' src={mckSmart} className='h-auto w-[30rem]'></img>  
               </div>
               <div className='flex justify-center content-center animate-floating'>
-                <img alt='Dispositivo' src={mckphone} className='h-auto w-80'></img>  
+                <img alt='Dispositivo' src={mckphone} className='h-auto w-[30rem]'></img>  
               </div>
             </div>
           </div>
