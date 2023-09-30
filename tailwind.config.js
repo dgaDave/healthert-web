@@ -19,12 +19,12 @@ export default {
       keyframes:{
         heartBeat:{
             '0%':{transform:'scale(1);opacity:1;'},
-            '50%':{transform:'scale(1.3);opacity:0.9;'},
+            '50%':{transform:'scale(1.2);opacity:1;'},
             '100%':{transform:'scale(1);opacity:1;'},
         }
       },
       animation:{
-        heartBeat:'heartBeat 2s infinite'
+        heartBeat:'heartBeat 3s infinite'
       }
     },
     fontFamily: {

@@ -5,16 +5,13 @@ import Error from "./routes/Error"
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Landing/>
+    element: <Landing/>,
+    errorElement: <Error/>
   },
   {
     path:"/user",
     element:<div>Usuario</div>
   },
-  {
-    path: "*",
-    element: <Error/>,
-  }
 ])
 
 function App() {
