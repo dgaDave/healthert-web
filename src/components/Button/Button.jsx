@@ -1,7 +1,8 @@
-const Button = ({ text, link }) => {
+const Button = ({ text, link, svg}) => {
     return (
         <a href={link} className= "btn-primary">
-            {text}
+            <span>{svg}</span>
+            <span> {text}</span>
         </a>
     )
 }
