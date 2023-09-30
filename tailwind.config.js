@@ -16,6 +16,16 @@ export default {
         'moradoOscuro': '#8D008F'
 
       },
+      keyframes:{
+        heartBeat:{
+            '0%':{transform:'scale(1);opacity:1;'},
+            '50%':{transform:'scale(1.3);opacity:0.9;'},
+            '100%':{transform:'scale(1);opacity:1;'},
+        }
+      },
+      animation:{
+        heartBeat:'heartBeat 2s infinite'
+      }
     },
     fontFamily: {
       'roboto': 'Roboto, sans-serif'

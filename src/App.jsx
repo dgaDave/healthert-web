@@ -1,15 +1,19 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Landing from "./routes/Landing"
+import Error from "./routes/Error"
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Landing />,
-    errorElement: <div>Hubo un error</div>
+    element: <Landing/>
   },
   {
     path:"/user",
     element:<div>Usuario</div>
+  },
+  {
+    path: "*",
+    element: <Error/>,
   }
 ])
 
