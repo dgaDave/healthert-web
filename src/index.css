@@ -13,9 +13,6 @@
 }
 
 @layer components {
-    .btn-primary {
-        @apply m-2 text-white hover:cursor-pointer bg-verde text-xl py-3 px-4 inline-block rounded-full hover:bg-green-700 hover:transition-all duration-300 hover:drop-shadow-xl hover:scale-105;
-    }
 }
 
 
