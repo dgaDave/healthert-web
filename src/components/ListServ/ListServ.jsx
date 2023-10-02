@@ -1,5 +1,4 @@
 import { useState } from "react"
-import "./ListServ.css"
 import Hearth from "./svg/Hearth"
 import Geo from "./svg/Geo"
 import Plus from "./svg/Plus"
