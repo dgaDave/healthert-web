@@ -12,7 +12,7 @@ const NavBar = () => {
           <span className='text-3xl font-semibold md:text-4xl text-verde'>HEALTHERT</span>
         </div>
       </a>
-      <Button text={"Iniciar sesion"} link={"/user"} />
+      <Button text={"Iniciar sesion"} link={"user"} />
     </nav >
   )
 }
