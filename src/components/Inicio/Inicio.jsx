@@ -1,6 +1,4 @@
 import React from 'react'
-import mckphone from '../../assets/images/mckPhone1.png'
-import mckSmart from '../../assets/images/mckSmart1.png'
 import mcks from '../../assets/images/mcks1.png'
 
 
@@ -20,11 +18,8 @@ const Inicio = () => {
             </div>
             <div className='flex  justify-center content-center  mx-8 p-0 float-left items-center'>
               <div className='flex justify-center content-center items-center animate-floating'>
-                <img alt='Dispositivo' src={mcks} className='h-auto w-96'></img>                
+                <img alt='Dispositivo' src={mcks} className='h-auto w-[28rem]'></img>                
               </div>
-              {/*<div className='flex justify-center content-center animate-floating'>
-                <img alt='Dispositivo' src={mckphone} className='h-auto w-96'></img>
-              </div>*/}
             </div>
           </div>
         </div>
