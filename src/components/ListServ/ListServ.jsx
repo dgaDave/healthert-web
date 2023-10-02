@@ -5,14 +5,14 @@ import Geo from "./svg/Geo"
 import Plus from "./svg/Plus"
 const Items = ({ svg, title, text }) => {
     return (
-        <div className="contenedor">
-            <div className="contenedor--svg">
+        <div className="flex flex-col my-2 p-5 border-2 border-gray-200 dark:border-slate-700 rounded-2xl  dark:bg-gray-800  transform  duration-300 hover:scale-105 lg:m-4 shadow-md">
+            <div className="flex justify-center m-5">
                 {svg}
             </div>
-            <div className="contenedor--title">
+            <div className="flex justify-center place-content-center text-center m-5 font-bold text-3xl text-verde">
                 <h1>{title}</h1>
             </div>
-            <div className="contenedor--text">
+            <div className="grid leading-5  justify-center text-center font-normal  m-6">
                 <p>
                     {text}
                 </p>

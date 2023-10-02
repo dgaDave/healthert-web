@@ -1,11 +1,10 @@
 import React from 'react'
-import mck from '../../assets/images/mck.png'
+import mck from '../../assets/images/mcks1.png'
 import Button from '../Button/Button'
 import PlayG from "./svg/PlayGoogle"
 
 const Inicio = () => {
   return (
-    <>
     <div className='flex justify-center'>
       <div className='flex justify-center my-14 max-w-screen-lg'>
         <div className='grid grid-cols-1 justify-center items-center lg:grid-cols-2 lg:gap-36'>
@@ -20,15 +19,12 @@ const Inicio = () => {
               <Button link={""} text={"Descargar"} svg={<PlayG></PlayG>}></Button>
             </div>
           </div>
-          <div className='items-center content-center'>
-              <img alt='Dispositivos' src={mck} className='h-auto w-auto'></img>  
+          <div className='flex items-center content-center'>
+            <img alt='Dispositivos' src={mck} className='w-[29rem] md:w-[34rem] xl:w-full animate-floating'></img>
           </div>
         </div>
       </div>
     </div>
-
-    
-    </>
   )
 }
 

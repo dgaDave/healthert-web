@@ -103,7 +103,6 @@ const funcData = [
 
 const Funciones = () => {
     return (
-        <>
             <div className="flex justify-center dark:bg-slate-900 ">
                 <div className=" text-moradoOscuro dark:text-gray-100">
                     <div className="text-5xl text-center py-5">
@@ -117,15 +116,8 @@ const Funciones = () => {
                     <div className="my-9">
                         <CardFunciones funcData={funcData} />
                     </div>
-                    {/* <div className="px-5">
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl  text-center font-bold">
-                            ¿Qué funciones tengo?</h1>
-                        <p className="text-gray-400 dark:text-verde text-xl md:text-2xl sm:text-2xl text-center font-bold py-5">
-                            Según tu plan, las funciones cambiarán, sin embargo, en Healthert pensamos en ayudar, sin importar el plan, podrás cuidar a los tuyos. </p>
-                    </div> */}
                 </div>
             </div>
-        </>
     )
 }
 
