@@ -19,7 +19,7 @@ export const useAuth = () => {
 export function AuthProvider({ children }) {
 
     const [user, setUser] = useState(null)
-    const [loading, setLoading] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     const signUp = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
@@ -39,12 +39,9 @@ export function AuthProvider({ children }) {
 
         return () => {
             unsubscribe()
-            console.log(user)
-
         }
     }, [])
 
 
-
-    return <authContext.Provider value={{ user, login, signUp }}>{children}</authContext.Provider>
+    return <authContext.Provider value={{ user, login, signUp, logOut, loading }}>{children}</authContext.Provider>
 }

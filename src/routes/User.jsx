@@ -1,9 +1,9 @@
-import { useState} from 'react'
+import { useState } from 'react'
 import { useAuth } from '../context/authContext'
 
 const User = () => {
 
-    const { signUp, signOut } = useAuth()
+    const { signUp, logOut } = useAuth()
 
     const [user, setUser] = useState({
         email: "",
@@ -24,15 +24,20 @@ const User = () => {
         }
     }
 
+    const handleLogOut = async () => {
+        await logOut()
+    }
+
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form className='text-verde' onSubmit={handleSubmit}>
                 <label htmlFor="email">Email</label>
                 <input type="email" name="email" placeholder='El email mamalom' onChange={handleChange} />
                 <label htmlFor="password">Password</label>
                 <input type="password" name='password' placeholder='Password' onChange={handleChange} />
                 <button type="submit">Registrar</button>
             </form>
+            <button onClick={handleLogOut}>Salir</button>
         </div>
     )
 }

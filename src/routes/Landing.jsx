@@ -8,14 +8,15 @@ import Funciones from '../components/Funciones/Funciones'
 const Landing = () => {
   return (
     <>
-    <NavBar/>
-    <Inicio/>
-    <ListServ/>
-    <Planes/>
-    <Funciones/>
-    <Footer/>
+      <NavBar />
+      <Inicio />
+      <ListServ />
+      <Planes />
+      <Funciones />
+      <Footer />
     </>
   )
+  
 }
 
 export default Landing
