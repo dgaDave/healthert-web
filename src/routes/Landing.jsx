@@ -4,11 +4,17 @@ import Footer from '../components/Footer/Footer'
 import ListServ from '../components/ListServ/ListServ'
 import Planes from '../components/Planes/Planes'
 import Funciones from '../components/Funciones/Funciones'
+import {useAuth} from '../context/authContext'
+
 
 const Landing = () => {
+  
+  const {user} = useAuth()
+
   return (
     <>
-      <NavBar />
+      <div>Usuario: {user.email}</div>
+      <NavBar link="logIn" text="Iniciar sesion" />
       <Inicio />
       <ListServ />
       <Planes />
@@ -16,7 +22,7 @@ const Landing = () => {
       <Footer />
     </>
   )
-  
+
 }
 
 export default Landing

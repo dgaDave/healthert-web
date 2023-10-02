@@ -25,7 +25,7 @@ export function AuthProvider({ children }) {
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    const login = (email, password) => {
+    const logIn = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
@@ -43,5 +43,5 @@ export function AuthProvider({ children }) {
     }, [])
 
 
-    return <authContext.Provider value={{ user, login, signUp, logOut, loading }}>{children}</authContext.Provider>
+    return <authContext.Provider value={{ user, logIn, signUp, logOut, loading }}>{children}</authContext.Provider>
 }
