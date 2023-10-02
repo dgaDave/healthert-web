@@ -1,6 +1,8 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Landing from "./routes/Landing"
 import Error from "./routes/Error"
+import User from "./routes/User"
+import { AuthProvider } from "./context/authContext"
 
 const router = createBrowserRouter([
   {
@@ -10,13 +12,19 @@ const router = createBrowserRouter([
   },
   {
     path: "/user",
-    element: <div>Prueba de usuario</div>
+    element: <User />
   },
+  {
+    path: "cola",
+    element: <div>hola</div>
+  }
 ])
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   )
 }
 
