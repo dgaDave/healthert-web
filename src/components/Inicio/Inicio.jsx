@@ -1,6 +1,6 @@
 import React from 'react'
 import mck from '../../assets/images/mcks1.png'
-import Button from '../Button/Button'
+import Button from '../Button/ButtonLink'
 import PlayG from "./svg/PlayGoogle"
 
 const Inicio = () => {

@@ -14,7 +14,7 @@ const Landing = () => {
   return (
     <>
       <div>Usuario: {user.email}</div>
-      <NavBar link="logIn" text="Iniciar sesion" />
+      <NavBar link="login" text="Iniciar sesion" />
       <Inicio />
       <ListServ />
       <Planes />

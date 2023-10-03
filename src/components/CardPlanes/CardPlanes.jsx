@@ -1,4 +1,4 @@
-import Button from "../Button/Button"
+import Button from "../Button/ButtonLink"
 export const CardPlanes = ({planes}) => {
   return (
     <div className="mx-auto flex flex-col items-center md:items-stretch md:flex-row justify-center lg:space-x-12 md:space-x-9 md:space-y-0 space-y-8">

@@ -6,9 +6,11 @@ import FormLogIn from '../components/FormLogIn/FormLogIn'
 const SignUp = () => {
     return (
         <>
-            <NavBar link="/healthert-web/" text="Regresar" />
-            <FormLogIn />
-            <Footer />
+            <div className='flex flex-col h-screen justify-between'>
+                <NavBar link="/healthert-web/" text="Regresar" />
+                <FormLogIn />
+                <Footer />
+            </div>
         </>
     )
 }

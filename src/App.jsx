@@ -1,7 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Landing from "./routes/Landing"
 import Error from "./routes/Error"
-import User from "./routes/User"
 import { AuthProvider } from "./context/authContext"
 import LogIn from "./routes/LogIn"
 
@@ -12,12 +11,12 @@ const router = createBrowserRouter([
     errorElement: <Error />
   },
   {
-    path: "/healthert-web/user",
-    element: <User />
+    path: 'healthert-web/login',
+    element: <LogIn />,
+    errorElement: <Error />
   },
   {
-    path: 'healthert-web/logIn',
-    element: <LogIn />
+    path:'healthert-web/signup'
   }
 ])
 
