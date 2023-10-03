@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useAuth } from '../../context/authContext'
 import { Link, useNavigate } from 'react-router-dom'
 import Button from '../Button/Button'
+import FormField from '../FormField/FormField'
 
 const FormLogIn = () => {
 
@@ -23,6 +24,7 @@ const FormLogIn = () => {
 
     const handleUserChange = ({ target: { name, value } }) => {
         setUser({ ...user, [name]: value })
+        console.log(user)
     }
 
     const handleLogOut = async () => {
@@ -31,16 +33,12 @@ const FormLogIn = () => {
     }
 
     return (
-        <div className='flex items-center p-6  justify-center'>
+        <div className='flex items-center p-6 flex-col justify-center'>
             <form onSubmit={handleSubmit} className='flex justify-center max-w-md w-full flex-col p-6 border-2 border-gray-200 dark:border-slate-700 rounded-2xl  dark:bg-gray-800'>
                 <h1 className='text-5xl font-semibold'>Bienvenido de nuevo.</h1>
-                <h3 className='mb-8'>Ingresa tus datos para iniciar sesion.</h3>
-                <label htmlFor="email" className='mb-2 text-lg'>Correo electronico</label>
-                <input type="email" placeholder='Correo electronico' name='email' id='email' autoComplete='on' onChange={handleUserChange}
-                    className='bg-white dark:bg-slate-900 border-[1px] border-gray-200 dark:border-slate-700 rounded-xl px-4 py-4 outline-none' />
-                <label htmlFor="password" className='mt-4 mb-2 text-lg'>Contrasena</label>
-                <input type="password" placeholder='Contrasena' name='password' id="password" autoComplete='on' onChange={handleUserChange}
-                    className='bg-white dark:bg-slate-900 border-[1px] border-gray-200 dark:border-slate-700 rounded-xl px-4 py-4 outline-none' />
+                <h3 className='mb-3 mt-2'>Ingresa tus datos para iniciar sesion.</h3>
+                <FormField name="email" onChange={handleUserChange} placeholder={"Correo electronico"} text={"Correo electronico"} type={"email"} />
+                <FormField name="password" onChange={handleUserChange} placeholder={"Contrasena"} text={"Contrasena"} type={"password"} />
                 <div className='flex justify-between px-2 mt-2'>
                     <span>
                         <input type="checkbox" name="remember" id="remember" className=' accent-verde' />

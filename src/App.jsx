@@ -3,6 +3,7 @@ import Landing from "./routes/Landing"
 import Error from "./routes/Error"
 import { AuthProvider } from "./context/authContext"
 import LogIn from "./routes/LogIn"
+import AppMain from './routes/AppMain'
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,11 @@ const router = createBrowserRouter([
     errorElement: <Error />
   },
   {
-    path:'healthert-web/signup'
+    path: 'healthert-web/signup'
+  },
+  {
+    path: 'healthert-web/app',
+    element: <AppMain />
   }
 ])
 
