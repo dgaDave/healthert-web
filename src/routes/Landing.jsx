@@ -23,7 +23,6 @@ const Landing = () => {
 
   return (
     <>
-      <div>Usuario: {user.email}</div>
       <NavBar link="login" text="Iniciar sesion" />
       <Inicio />
       <ListServ />
