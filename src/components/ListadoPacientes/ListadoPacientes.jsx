@@ -10,16 +10,17 @@ const MostrarDoctorYPacientes = ({ doctor, pacientes }) => {
                 </div>
             </a>
             <hr></hr><br></br>
-            <div className="overflow-y-auto h-screen overflow-auto">
+            <div className="overflow-y-auto h-screen overflow-auto"> 
                 {pacientes.map(paciente => (
-                    <a key={paciente.id} href="#" className="border-2 border-verde rounded-2xl bg-white p-2 mt-5 mx-4 flex items-center mr-2 duration-300 transform hover:scale-105 dark:border-slate-700 dark:bg-gray-800 shadow-lg">
+                    <Link key={paciente.id} to={`/InfoCompleta/InfoCompleta/ ${paciente.id}`}  className="border-2 border-verde rounded-2xl bg-white p-2 mt-5 mx-4 flex items-center mr-2 duration-300 transform hover:scale-105 dark:border-slate-700 dark:bg-gray-800 shadow-lg"> 
+                       
                         <img src="user.png" alt="Paciente" className="rounded-full w-10 h-10 mx-4" />
                         <div>
                             <p className="font-bold text-lg">{paciente.nombre}</p>
                             <p>Edad: {paciente.edad} &nbsp;&nbsp; BPM: {paciente.bpm}</p>
                             <p>CURP: {paciente.curp}</p>
                         </div>
-                    </a>
+                    </Link>
                     
                 ))}
             </div>
