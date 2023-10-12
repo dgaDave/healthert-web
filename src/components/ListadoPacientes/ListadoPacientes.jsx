@@ -51,7 +51,6 @@ const ListadoPacientes = () => {
     ];
 
     return (
-        <div className="lg:w-1/4 overflow-hidden rounded-r-lg shadow-lg border-gray-100 p-2 dark:bg-gray-800">
             <MostrarDoctorYPacientes doctor={doctor} pacientes={pacientes} />
         </div>
     )
