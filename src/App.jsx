@@ -29,6 +29,7 @@
 // Archivo App.jsx
 // Archivo App.jsx
 import ListadoPacientes from "./components/ListadoPacientes/ListadoPacientes"
+import Prueba from "./components/Prueba/Prueba"
 
 function App() {
   return (
