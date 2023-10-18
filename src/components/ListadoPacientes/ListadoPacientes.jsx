@@ -13,8 +13,8 @@ const MostrarDoctorYPacientes = ({ doctor, pacientes }) => {
         <>
 
             {infoDiv == 1 ?
-                <div className="lg:w-1/4  h-screen flex flex-col rounded-r-lg overflow-hidden shadow-lg border-gray-100 p-2 dark:bg-gray-400">
-                    <a href="#" className="border-2 border-verde dark:border-slate-700 rounded-2xl bg-white p-2.5 my-5 flex items-center transition hover:scale-105 dark:bg-gray-800">
+                <div className="lg:w-1/4  h-screen flex flex-col rounded-r-lg overflow-hidden shadow-lg border-gray-100 p-2 dark:bg-gray-800">
+                    <a href="#" className="border-2 border-verde dark:border-slate-700 rounded-2xl bg-white p-2.5 my-5 flex items-center transition dark:bg-gray-800">
                         <img src="user.png" alt="Enfermera" className="rounded-full w-10 h-10 mr-4" />
                         <div>
                             <p className="font-bold text-xl">{doctor.nombre}</p>
@@ -38,8 +38,8 @@ const MostrarDoctorYPacientes = ({ doctor, pacientes }) => {
                 </div>
 
                 :
-                <><div className="lg:w-1/4  h-screen flex flex-col rounded-r-lg overflow-hidden shadow-lg border-gray-100 p-2 dark:bg-gray-400">
-                    <a href="#" className="border-2 border-verde dark:border-slate-700 rounded-2xl bg-white p-2.5 my-5 flex items-center transition hover:scale-105 dark:bg-gray-800">
+                <><div className="lg:w-1/4  h-screen flex flex-col rounded-r-lg overflow-hidden shadow-lg border-gray-100 p-2 dark:bg-gray-800">
+                    <a href="#" className="border-2 border-verde dark:border-slate-700 rounded-2xl bg-white p-2.5 my-5 flex items-center transition dark:bg-gray-800">
                         <img src="user.png" alt="Enfermera" className="rounded-full w-10 h-10 mr-4" />
                         <div>
                             <p className="font-bold text-xl">{doctor.nombre}</p>
@@ -112,25 +112,25 @@ const InfoCompleta = ({ nombre, curp, edad, peso, altura, grupS, genero, numSeg,
     }
 
     return (<>
-        <div className={`flex absolute w-3/4 bottom-0 right-0 p-5 transition  bg-slate-800 ${isOpen ? 'h-2/5' : ' h-1/6'}`}>
+        <div className={`flex absolute w-3/4 bottom-0 right-0 p-5 transition  shadow-inner  dark:bg-slate-800 ${isOpen ? 'h-2/5' : ' h-1/6'}`}>
             <div className='absolute -top-7 md:-top-9 rounded-full border-2 border-verde hover:scale-110 transition duration-300'>
                 <img className='w-12 md:w-16' src='/src/assets/images/logo/logo.png'></img>
             </div>
             <div className='flex  md:text-lg'>
                 <div className='flex-row'>
-                    <div className='flex pt-1 md:pt-4  text-md'>
+                    <div className='flex pt-1 md:pt-4  text-3xl font-semibold'>
                         {nombre}
                     </div>
-                    <div className='flex pt-1 md:pt-2  text-md'>
+                    <div className='flex pt-1 md:pt-2  text-xl'>
                         {curp}
                     </div>
-                    <div className={`flex pt-2  text-md ${isOpen ? '' : 'hidden'}`}>
-                        Genero {genero}
+                    <div className={`flex pt-4  text-xl  ${isOpen ? '' : 'hidden'}`}>
+                        <b>Genero:&nbsp; </b> {genero}
                     </div>
-                    <div className={`flex pt-2  text-md ${isOpen ? '' : 'hidden'}`}>
-                        NNS: {numSeg}
+                    <div className={`flex pt-2  text-xl  ${isOpen ? '' : 'hidden'}`}>
+                        <b>NNS:&nbsp;</b> {numSeg}
                     </div>
-                    <div className={`flex pt-2  text-md ${isOpen ? '' : 'hidden'}`}>
+                    <div className={`flex pt-2  text-xl  ${isOpen ? '' : 'hidden'}`}>
                         <div className='pr-3'>
                             {edad} años
                         </div>
@@ -143,11 +143,11 @@ const InfoCompleta = ({ nombre, curp, edad, peso, altura, grupS, genero, numSeg,
                     </div>
 
                 </div>
-                <div className={`flex-row px-16 ${isOpen ? '' : 'hidden'}`}>
+                <div className={`flex-row md:px-4 lg:px-16  ${isOpen ? '' : 'hidden'}`}>
                     <div className='flex justify-start pt-4'>
-                        <p className='font-semibold'>Alergias:</p>
+                        <p className='font-semibold text-2xl'>Alergias:</p>
                     </div>
-                    <div className='grid justify-start pt-4  px-1'>
+                    <div className='grid justify-start pt-4  px-1 text-xl'>
                         {
                             alergia.map((alergia, index) =>
                                 <li key={index}>{alergia}</li>)
@@ -156,9 +156,9 @@ const InfoCompleta = ({ nombre, curp, edad, peso, altura, grupS, genero, numSeg,
                 </div>
                 <div className={`flex-row ${isOpen ? '' : 'hidden'}`}>
                     <div className='flex justify-start pt-4'>
-                        <p className='font-semibold'>Padecimientos:</p>
+                        <p className='font-semibold text-2xl'>Padecimientos:</p>
                     </div>
-                    <div className='grid justify-start pt-4  px-1'>
+                    <div className='grid justify-start pt-4  px-1 text-xl'>
                         {
                             padecimiento.map((padecimiento, index) =>
                                 <li key={index}>{padecimiento}</li>)
