@@ -1,74 +1,35 @@
 import React, { useState } from 'react';
 
 const MostrarDoctorYPacientes = ({ doctor, pacientes }) => {
-    const [infoDiv, setInfoDiv] = useState(1);
     const [nombrePaciente, setNombrePaciente] = useState(null);
 
     const handleClick = (nombre) => {
-        setInfoDiv(infoDiv + 1);
         setNombrePaciente(nombre);
     }
 
     return (
-        <>
-
-            {infoDiv == 1 ?
-                <div className="lg:w-1/4  h-screen flex flex-col rounded-r-lg overflow-hidden shadow-lg border-gray-100 p-2 dark:bg-gray-800">
-                    <a href="#" className="border-2 border-verde dark:border-slate-700 rounded-2xl bg-white p-2.5 my-5 flex items-center transition dark:bg-gray-800">
-                        <img src="user.png" alt="Enfermera" className="rounded-full w-10 h-10 mr-4" />
-                        <div>
-                            <p className="font-bold text-xl">{doctor.nombre}</p>
-                            <p>{doctor.especialidad}</p>
-                        </div>
-                    </a>
-                    <div className="scroll-m-0 overflow-y-scroll">
-                        {pacientes.map(paciente => (
-                            <button key={paciente.id} onClick={() => handleClick(paciente.nombre)} className="border-2 cursor-pointer border-verde rounded-2xl bg-white p-2 mt-5 mx-4 flex items-center mr-2 duration-300 transform hover:scale-105 dark:border-slate-700 dark:bg-gray-800 shadow-lg">
-
-                                <img src="user.png" alt="Paciente" className="rounded-full w-10 h-10 mx-4" />
-                                <div>
-                                    <p className="font-bold text-lg">{paciente.nombre}</p>
-                                    <p>Edad: {paciente.edad} &nbsp;&nbsp; BPM: {paciente.bpm}</p>
-                                    <p>CURP: {paciente.curp}</p>
-                                </div>
-                            </button>
-
-                        ))}
-                    </div>
+        <>  <div className="lg:w-1/4  h-screen flex flex-col rounded-r-lg overflow-hidden shadow-lg border-gray-100 p-2 dark:bg-gray-800">
+            <a href="#" className="border-2 border-verde dark:border-slate-700 rounded-2xl bg-white p-2.5 my-5 flex items-center transition dark:bg-gray-800">
+                <img src="user.png" alt="Enfermera" className="rounded-full w-10 h-10 mr-4" />
+                <div>
+                    <p className="font-bold text-xl">{doctor.nombre}</p>
+                    <p>{doctor.especialidad}</p>
                 </div>
-
-                :
-                <><div className="lg:w-1/4  h-screen flex flex-col rounded-r-lg overflow-hidden shadow-lg border-gray-100 p-2 dark:bg-gray-800">
-                    <a href="#" className="border-2 border-verde dark:border-slate-700 rounded-2xl bg-white p-2.5 my-5 flex items-center transition dark:bg-gray-800">
-                        <img src="user.png" alt="Enfermera" className="rounded-full w-10 h-10 mr-4" />
+            </a>
+            <div className="scroll-m-0 overflow-y-scroll">
+                {pacientes.map(paciente => (
+                    <button key={paciente.id} onClick={() => handleClick(paciente.nombre)} className="border-2 cursor-pointer border-verde rounded-2xl bg-white p-2 mt-5 mx-4 flex items-center mr-2 duration-300 transform hover:scale-105 dark:border-slate-700 dark:bg-gray-800 shadow-lg">
+                        <img src="user.png" alt="Paciente" className="rounded-full w-10 h-10 mx-4" />
                         <div>
-                            <p className="font-bold text-xl">{doctor.nombre}</p>
-                            <p>{doctor.especialidad}</p>
+                            <p className="font-bold text-lg">{paciente.nombre}</p>
+                            <p>Edad: {paciente.edad} &nbsp;&nbsp; BPM: {paciente.bpm}</p>
+                            <p>CURP: {paciente.curp}</p>
                         </div>
-                    </a>
-                    <div className="scroll-m-0 overflow-y-scroll">
-                        {pacientes.map(paciente => (
-                            <button key={paciente.id} onClick={() => handleClick(paciente.nombre)} className="border-2 cursor-pointer border-verde rounded-2xl bg-white p-2 mt-5 mx-4 flex items-center mr-2 duration-300 transform hover:scale-105 dark:border-slate-700 dark:bg-gray-800 shadow-lg">
-
-                                <img src="user.png" alt="Paciente" className="rounded-full w-10 h-10 mx-4" />
-                                <div>
-                                    <p className="font-bold text-lg">{paciente.nombre}</p>
-                                    <p>Edad: {paciente.edad} &nbsp;&nbsp; BPM: {paciente.bpm}</p>
-                                    <p>CURP: {paciente.curp}</p>
-                                </div>
-                            </button>
-
-                        ))}
-                    </div>
-                </div><InfoCompleta nombre={nombrePaciente} curp={'GOCJ020416HMNNRRA7'} edad={'21'} peso={'78'}
-                    altura={'180'} grupS={'0+'} genero={'Masculino'} numSeg={'4815163078686709'} alergias={'Ibuprofeno,Polen'} padecimientos={'Diabetes, hipertension'} /></>
-
-
-            }
-
-        </>
-
-
+                    </button>
+                ))}
+            </div>
+        </div><InfoCompleta nombre={nombrePaciente} curp={'GOCJ020416HMNNRRA7'} edad={'21'} peso={'78'}
+            altura={'180'} grupS={'0+'} genero={'Masculino'} numSeg={'4815163078686709'} alergias={'Ibuprofeno,Polen'} padecimientos={'Diabetes, hipertension'} /></>
     )
 }
 
@@ -101,10 +62,9 @@ const ListadoPacientes = () => {
     )
 }
 
-const InfoCompleta = ({ nombre, curp, edad, peso, altura, grupS, genero, numSeg, alergias, padecimientos }) => {
+const InfoCompleta = ({ nombre, curp, edad, peso, altura, grupS, genero, numSeg, alergias, padecimientos, action }) => {
     const padecimiento = padecimientos.split(',');
     const alergia = alergias.split(',');
-    const [isSmall, setIsSmall] = useState(false);
 
     const [isOpen, setIsOpen] = useState(false);
     const handleClickIsOpen = () => {
@@ -119,26 +79,28 @@ const InfoCompleta = ({ nombre, curp, edad, peso, altura, grupS, genero, numSeg,
             <div className='flex  md:text-lg'>
                 <div className='flex-row'>
                     <div className='flex pt-1 md:pt-4  text-3xl font-semibold'>
-                        {nombre}
+                        <p>{nombre}</p>
                     </div>
-                    <div className='flex pt-1 md:pt-2  text-xl'>
-                        {curp}
+                    <div className={`flex pt-1 md:pt-2  text-xl space-x-28 ${isOpen ? 'space-x-0' : ''}`}>
+                        <p>{curp}</p>
+                        <p className={`${isOpen ? 'hidden' : ''}`}> <b>Grupo sanguineo:&nbsp;</b>{grupS}</p>
                     </div>
+
                     <div className={`flex pt-4  text-xl  ${isOpen ? '' : 'hidden'}`}>
-                        <b>Genero:&nbsp; </b> {genero}
+                        <p><b>Genero:&nbsp;</b> {genero}</p>
                     </div>
                     <div className={`flex pt-2  text-xl  ${isOpen ? '' : 'hidden'}`}>
-                        <b>NNS:&nbsp;</b> {numSeg}
+                        <p><b>NNS:&nbsp;</b> {numSeg}</p>
                     </div>
                     <div className={`flex pt-2  text-xl  ${isOpen ? '' : 'hidden'}`}>
                         <div className='pr-3'>
-                            {edad} años
+                            <p>{edad} años</p>
                         </div>
                         <div className='pr-3'>
-                            {peso}Kg
+                            <p>{peso}Kg</p>
                         </div>
                         <div className='pr-3'>
-                            {altura} cm
+                            <p>{altura} cm</p>
                         </div>
                     </div>
 
@@ -171,7 +133,6 @@ const InfoCompleta = ({ nombre, curp, edad, peso, altura, grupS, genero, numSeg,
                     <path d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
                 </svg>
             </div>
-
         </div>
     </>
     )
