@@ -12,17 +12,12 @@ const MostrarDoctorYPacientes = ({ doctor, pacientes }) => {
         <>
             <div className="w-1/4 h-screen flex flex-col overflow-auto border-gray-100 p-4 dark:bg-gray-800">
                 <CardListado name={doctor.nombre} speciality={doctor.especialidad} />
-                <div className="scroll-m-0 overflow-y-scroll">
-                    {pacientes.map(paciente => (
-                        <button key={paciente.id} onClick={() => handleClick(paciente.nombre)} className="border-2 cursor-pointer border-verde rounded-2xl bg-white p-2 mt-5 flex items-center mr-2 duration-300 transform hover:scale-105 dark:border-slate-700 dark:bg-gray-800 shadow-lg">
-                            <img src="user.png" alt="Paciente" className="rounded-full w-10 h-10 mx-4" />
-                            <div>
-                                <p className="font-bold text-lg">{paciente.nombre}</p>
-                                <p>Edad: {paciente.edad} &nbsp;&nbsp; BPM: {paciente.bpm}</p>
-                                <p>CURP: {paciente.curp}</p>
-                            </div>
-                        </button>
-                    ))}
+                <div className="overflow-y-auto">
+                    {
+                        pacientes.map(paciente => (
+                            <CardListado key={paciente.id} name={paciente.nombre} age={paciente.edad} curp={paciente.curp} bpm={paciente.bpm} />
+                        ))
+                    }
                 </div>
             </div><InfoCompleta nombre={nombrePaciente} curp={'GOCJ020416HMNNRRA7'} edad={'21'} peso={'78'}
                 altura={'180'} grupS={'0+'} genero={'Masculino'} numSeg={'4815163078686709'} alergias={'Ibuprofeno,Polen'} padecimientos={'Diabetes, hipertension'} />
