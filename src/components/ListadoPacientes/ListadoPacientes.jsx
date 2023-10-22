@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CardListado from './CardListado';
 
 const MostrarDoctorYPacientes = ({ doctor, pacientes }) => {
     const [nombrePaciente, setNombrePaciente] = useState(null);
@@ -8,28 +9,24 @@ const MostrarDoctorYPacientes = ({ doctor, pacientes }) => {
     }
 
     return (
-        <>  <div className="lg:w-1/4  h-screen flex flex-col rounded-r-lg overflow-hidden shadow-lg border-gray-100 p-2 dark:bg-gray-800">
-            <a href="#" className="border-2 border-verde dark:border-slate-700 rounded-2xl bg-white p-2.5 my-5 flex items-center transition dark:bg-gray-800">
-                <img src="user.png" alt="Enfermera" className="rounded-full w-10 h-10 mr-4" />
-                <div>
-                    <p className="font-bold text-xl">{doctor.nombre}</p>
-                    <p>{doctor.especialidad}</p>
+        <>
+            <div className="w-1/4 h-screen flex flex-col overflow-auto border-gray-100 p-4 dark:bg-gray-800">
+                <CardListado name={doctor.nombre} speciality={doctor.especialidad} />
+                <div className="scroll-m-0 overflow-y-scroll">
+                    {pacientes.map(paciente => (
+                        <button key={paciente.id} onClick={() => handleClick(paciente.nombre)} className="border-2 cursor-pointer border-verde rounded-2xl bg-white p-2 mt-5 flex items-center mr-2 duration-300 transform hover:scale-105 dark:border-slate-700 dark:bg-gray-800 shadow-lg">
+                            <img src="user.png" alt="Paciente" className="rounded-full w-10 h-10 mx-4" />
+                            <div>
+                                <p className="font-bold text-lg">{paciente.nombre}</p>
+                                <p>Edad: {paciente.edad} &nbsp;&nbsp; BPM: {paciente.bpm}</p>
+                                <p>CURP: {paciente.curp}</p>
+                            </div>
+                        </button>
+                    ))}
                 </div>
-            </a>
-            <div className="scroll-m-0 overflow-y-scroll">
-                {pacientes.map(paciente => (
-                    <button key={paciente.id} onClick={() => handleClick(paciente.nombre)} className="border-2 cursor-pointer border-verde rounded-2xl bg-white p-2 mt-5 mx-4 flex items-center mr-2 duration-300 transform hover:scale-105 dark:border-slate-700 dark:bg-gray-800 shadow-lg">
-                        <img src="user.png" alt="Paciente" className="rounded-full w-10 h-10 mx-4" />
-                        <div>
-                            <p className="font-bold text-lg">{paciente.nombre}</p>
-                            <p>Edad: {paciente.edad} &nbsp;&nbsp; BPM: {paciente.bpm}</p>
-                            <p>CURP: {paciente.curp}</p>
-                        </div>
-                    </button>
-                ))}
-            </div>
-        </div><InfoCompleta nombre={nombrePaciente} curp={'GOCJ020416HMNNRRA7'} edad={'21'} peso={'78'}
-            altura={'180'} grupS={'0+'} genero={'Masculino'} numSeg={'4815163078686709'} alergias={'Ibuprofeno,Polen'} padecimientos={'Diabetes, hipertension'} /></>
+            </div><InfoCompleta nombre={nombrePaciente} curp={'GOCJ020416HMNNRRA7'} edad={'21'} peso={'78'}
+                altura={'180'} grupS={'0+'} genero={'Masculino'} numSeg={'4815163078686709'} alergias={'Ibuprofeno,Polen'} padecimientos={'Diabetes, hipertension'} />
+        </>
     )
 }
 
