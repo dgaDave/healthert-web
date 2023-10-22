@@ -5,22 +5,12 @@ import ListServ from '../components/ListServ/ListServ'
 import Planes from '../components/Planes/Planes'
 import Funciones from '../components/Funciones/Funciones'
 import { useAuth } from '../context/authContext'
-import { Navigate } from 'react-router-dom'
-
 
 const Landing = () => {
 
 
-  const { user, loading } = useAuth()
-
-  if (loading) {
-    return <div>Hola</div>
-  }
-
-  if(user){
-    return <Navigate to="/healthert-web/app" />
-  }
-
+  const { user } = useAuth()
+  console.log(user)
   return (
     <>
       <NavBar link="login" text="Iniciar sesion" />

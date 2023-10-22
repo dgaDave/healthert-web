@@ -4,24 +4,28 @@ import Error from "./routes/Error"
 import { AuthProvider } from "./context/authContext"
 import LogIn from "./routes/LogIn"
 import AppMain from './routes/AppMain'
+import ProtectedRoute from './routes/ProtectedRoute'
+import RedirectingRoute from './routes/RedirectingRoute'
+import SignUp from "./routes/SignUp"
 
 const router = createBrowserRouter([
   {
     path: "/healthert-web/",
-    element: <Landing />,
+    element: <RedirectingRoute><Landing /></RedirectingRoute>,
     errorElement: <Error />
   },
   {
     path: 'healthert-web/login',
-    element: <LogIn />,
+    element: <RedirectingRoute><LogIn /></RedirectingRoute>,
     errorElement: <Error />
   },
   {
-    path: 'healthert-web/signup'
+    path: 'healthert-web/signup',
+    element: <RedirectingRoute><SignUp /></RedirectingRoute>
   },
   {
     path: 'healthert-web/app',
-    element: <AppMain />
+    element: <ProtectedRoute><AppMain /></ProtectedRoute>
   }
 ])
 

@@ -7,7 +7,7 @@ const AppMain = () => {
 
     const navigate = useNavigate()
 
-    const { logOut } = useAuth()
+    const { logOut, user } = useAuth()
 
     const handleLogOut = async () => {
         await logOut()
@@ -15,7 +15,10 @@ const AppMain = () => {
     }
 
     return (
-        <div><Button text="Salir de la sesion" onClick={handleLogOut} /></div>
+        <div>
+            <p>{user.email}</p>
+            <Button text="Salir de la sesion" onClick={handleLogOut} />
+        </div>
     )
 }
 

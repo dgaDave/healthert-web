@@ -10,7 +10,7 @@ const NavBar = ({link, text}) => {
       <Link to="/healthert-web/">
         <div className='flex justify-start items-center space-x-2'>
           <span className='w-10 h-10 md:w-12 md:h-12'><LogoPlain /></span>
-          <span className='text-3xl font-semibold md:text-4xl text-verde'>HEALTHERT</span>
+          <span className='hidden sm:inline-block text-3xl font-semibold md:text-4xl text-verde'>HEALTHERT</span>
         </div>
       </Link>
       <Button text={text} link={link} />
