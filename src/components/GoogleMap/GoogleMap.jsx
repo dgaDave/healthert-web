@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { GoogleMapsProvider, useGoogleMap } from '@ubilabs/google-maps-react-hooks'
+import { styles } from './MapStyles'
 
 const GoogleMap = () => {
     const mapOptions = {
