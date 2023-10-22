@@ -10,17 +10,17 @@ const MostrarDoctorYPacientes = ({ doctor, pacientes }) => {
 
     return (
         <>
-            <div className="w-1/4 h-screen flex flex-col overflow-auto border-gray-100 p-4 dark:bg-gray-800">
+            <div className="w-1/4 h-screen flex flex-col overflow-auto border-gray-100 space-y-6 p-4 dark:bg-gray-800">
                 <CardListado name={doctor.nombre} speciality={doctor.especialidad} />
-                <div className="overflow-y-auto">
+                <div className="overflow-auto space-y-6">
                     {
                         pacientes.map(paciente => (
                             <CardListado key={paciente.id} name={paciente.nombre} age={paciente.edad} curp={paciente.curp} bpm={paciente.bpm} />
                         ))
                     }
                 </div>
-            </div><InfoCompleta nombre={nombrePaciente} curp={'GOCJ020416HMNNRRA7'} edad={'21'} peso={'78'}
-                altura={'180'} grupS={'0+'} genero={'Masculino'} numSeg={'4815163078686709'} alergias={'Ibuprofeno,Polen'} padecimientos={'Diabetes, hipertension'} />
+            </div>
+            <InfoCompleta nombre={nombrePaciente} curp={'GOCJ020416HMNNRRA7'} edad={'21'} peso={'78'} altura={'180'} grupS={'0+'} genero={'Masculino'} numSeg={'4815163078686709'} alergias={'Ibuprofeno,Polen'} padecimientos={'Diabetes, hipertension'} />
         </>
     )
 }
