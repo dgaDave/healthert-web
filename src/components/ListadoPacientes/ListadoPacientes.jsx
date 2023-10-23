@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import CardListado from './CardListado';
+import { useAuth } from '../../context/authContext';
 
-const ListadoPacientes = ({ doctor, pacientes }) => {
+const ListadoPacientes = ({ userData,pacientes }) => {
+
+
     return (
             <div className="w-1/4 h-screen flex flex-col overflow-auto border-gray-100 space-y-6 p-4 dark:bg-gray-800">
-                <CardListado name={doctor.nombre} speciality={doctor.especialidad} />
+                <CardListado name={userData.nombrec.nombres} speciality={userData.rol} />
                 <div className="overflow-auto space-y-6">
                     {
                         pacientes.map(paciente => (

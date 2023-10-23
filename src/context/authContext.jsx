@@ -9,7 +9,7 @@ import { firestoreDB } from '../firebase'
 import { auth } from '../firebase'
 import { validateUser } from '../validations/user.validation'
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
-import { postUser } from "../controllers/user.controller";
+import { getUser, postUser } from "../controllers/user.controller";
 
 export const authContext = createContext()
 
@@ -22,16 +22,18 @@ export const useAuth = () => {
 export function AuthProvider({ children }) {
 
     const [user, setUser] = useState(null)
+    const [userData, setUserData] = useState(null)
+    const [rol, setRol] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    const signUp = async (email, password, nombreC, telefono, nombreHospital, rfc, licencia, rol) => {
+    const signUp = async (email, password, userData) => {
 
         try {
             if (validateUser(email, password)) {
                 await createUserWithEmailAndPassword(auth, email, password).
                     then(async (userCredential) => {
                         const uid = userCredential.user.uid
-                        postUser(uid, nombreC, telefono, nombreHospital, rfc, licencia, rol)
+                        postUser(uid, userData)
                     })
             }
         } catch (error) {
@@ -48,6 +50,7 @@ export function AuthProvider({ children }) {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
+            getUser(currentUser.uid).then((userData) => setUserData(userData)).catch()
             setLoading(false)
         })
 
@@ -57,5 +60,5 @@ export function AuthProvider({ children }) {
     }, [])
 
 
-    return <authContext.Provider value={{ user, logIn, signUp, logOut, loading }}>{children}</authContext.Provider>
+    return <authContext.Provider value={{ user, logIn, signUp, logOut, loading, userData }}>{children}</authContext.Provider>
 }

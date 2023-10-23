@@ -7,7 +7,6 @@ import AppMain from './routes/AppMain'
 import ProtectedRoute from './routes/ProtectedRoute'
 import RedirectingRoute from './routes/RedirectingRoute'
 import SignUp from "./routes/SignUp"
-import GoogleMap from "./components/GoogleMap/GoogleMap"
 
 const router = createBrowserRouter([
   {

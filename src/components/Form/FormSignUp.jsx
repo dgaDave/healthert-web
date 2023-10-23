@@ -19,10 +19,17 @@ const FormSignUp = () => {
         e.preventDefault()
         try {
             await signUp(formData.email, formData.password, {
-                "nombres": formData.nombres,
-                "apellidoP": formData.apellidoP,
-                "apellidoM": formData.apellidoM
-            }, formData.telefono, formData.nombreHospital, formData.rfc, formData.licencia, "admin")
+                nombrec: {
+                    "nombres": formData.nombres,
+                    "apellidoP": formData.apellidoP,
+                    "apellidoM": formData.apellidoM
+                },
+                telefono: formData.telefono,
+                nombreHospital: formData.nombreHospital,
+                rfc: formData.rfc,
+                licencia: formData.licencia,
+                rol: "admin"
+            })
         } catch (error) {
             throw new Error(error)
         }

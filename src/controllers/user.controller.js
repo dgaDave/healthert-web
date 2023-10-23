@@ -1,14 +1,17 @@
-import { doc, setDoc } from '@firebase/firestore'
+import { doc, getDoc, setDoc } from '@firebase/firestore'
 import { firestoreDB } from '../firebase'
 
-export const postUser = async (userid, nombreC, telefono, nombreHospital, rfc, licencia, rol) => {
+export const postUser = async (userid, userData) => {
     const userRef = doc(firestoreDB, 'users', userid)
-    await setDoc(userRef, {
-        nombrec: nombreC,
-        telefono: telefono,
-        nombreHospital: nombreHospital,
-        rfc: rfc,
-        licencia: licencia,
-        rol: rol
-    })
+    await setDoc(userRef, userData)
+}
+
+export const getUser = async (userid) => {
+    const userRef = doc(firestoreDB, 'users', userid)
+    const docSnapshot = await getDoc(userRef)
+    if (docSnapshot.exists()) {
+        return docSnapshot.data()
+    } else {
+        throw new Error("Usuario no encontrado")
+    }
 }

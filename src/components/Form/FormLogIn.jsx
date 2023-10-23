@@ -18,8 +18,7 @@ const FormLogIn = () => {
         e.preventDefault()
         try {
             await logIn(formData.email, formData.password)
-            navigate("/healthert-web/app")
-        } catch (error) {
+            } catch (error) {
             throw new Error(error)
         }
     }
