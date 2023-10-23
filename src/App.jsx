@@ -32,9 +32,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
-      <ListadoPacientes />
-    </>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   )
 }
 

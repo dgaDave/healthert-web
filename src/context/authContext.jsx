@@ -9,6 +9,7 @@ import { firestoreDB } from '../firebase'
 import { auth } from '../firebase'
 import { validateUser } from '../validations/user.validation'
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
+import { postUser } from "../controllers/user.controller";
 
 export const authContext = createContext()
 
@@ -23,21 +24,14 @@ export function AuthProvider({ children }) {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
-    const signUp = async (email, password, nombreC, telefono, nombreHospital, rfc, licencia, admin) => {
+    const signUp = async (email, password, nombreC, telefono, nombreHospital, rfc, licencia, rol) => {
 
         try {
             if (validateUser(email, password)) {
                 await createUserWithEmailAndPassword(auth, email, password).
                     then(async (userCredential) => {
                         const uid = userCredential.user.uid
-                        await setDoc(doc(firestoreDB, "users", uid), {
-                            nombrec: nombreC,
-                            telefono: telefono,
-                            nombreHospital: nombreHospital,
-                            rfc: rfc,
-                            licencia: licencia,
-                            type: admin
-                        })
+                        postUser(uid, nombreC, telefono, nombreHospital, rfc, licencia, rol)
                     })
             }
         } catch (error) {

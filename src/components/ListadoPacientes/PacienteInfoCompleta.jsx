@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 
 const PacienteInfoCompleta = ({ nombre, curp, edad, peso, altura, grupoSanguineo, genero, numeroSeguro, alergias, padecimientos }) => {
-    const padecimiento = padecimientos.split(',');
-    const alergia = alergias.split(',');
 
     const [isOpen, setIsOpen] = useState(false);
     const handleClickIsOpen = () => {
@@ -32,18 +30,20 @@ const PacienteInfoCompleta = ({ nombre, curp, edad, peso, altura, grupoSanguineo
                         <div className='inline-block'>
                             <p className='font-semibold text-2xl'>Alergias:</p>
                             <ul>
-                                {
-                                    alergia.map((alergia, index) =>
+                                {alergias && (
+                                    alergias.map((alergia, index) =>
                                         <li key={index}>{alergia}</li>)
+                                )
                                 }
                             </ul>
                         </div>
                         <div className='inline-block'>
                             <p className='font-semibold text-2xl'>Padecimientos:</p>
                             <ul>
-                                {
-                                    padecimiento.map((alergia, index) =>
+                                {padecimientos && (
+                                    padecimientos.map((alergia, index) =>
                                         <li key={index}>{alergia}</li>)
+                                )
                                 }
                             </ul>
                         </div>

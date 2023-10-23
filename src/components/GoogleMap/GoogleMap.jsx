@@ -18,12 +18,12 @@ const GoogleMap = () => {
     const [mapContainer, setMapContainer] = useState(null)
 
     return (
-        <div className='h-screen w-screen flex flex-row-reverse'>
+        <div className='h-screen w-3/4 flex flex-row-reverse'>
             <GoogleMapsProvider
                 googleMapsAPIKey='AIzaSyBbY_7khNJQ706ykCfevkbBMEG3twrf_-Y'
                 mapOptions={mapOptions}
                 mapContainer={mapContainer} >
-                <div className='h-full w-[75%]' ref={(node) => setMapContainer(node)} />
+                <div className='h-full w-full' ref={(node) => setMapContainer(node)} />
             </GoogleMapsProvider >
         </div>
 
