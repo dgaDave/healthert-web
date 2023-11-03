@@ -5,14 +5,12 @@ import { getFirestore } from 'firebase/firestore'
 import { getDatabase } from 'firebase/database'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCM8dFfWTqqiZ7BAI9VnU-RBZ3mC15a-z4",
-    authDomain: "healthert-b89e0.firebaseapp.com",
-    databaseURL: "https://healthert-b89e0-default-rtdb.firebaseio.com",
-    projectId: "healthert-b89e0",
-    storageBucket: "healthert-b89e0.appspot.com",
-    messagingSenderId: "191565912077",
-    appId: "1:191565912077:web:5bca1c3d75069eb2239d44",
-    measurementId: "G-BXJ63W1VPW"
+    apiKey: "AIzaSyC1EhtRsUU94lkaMMSml8Ie11TYCugZ7T0",
+    authDomain: "healthert-web.firebaseapp.com",
+    projectId: "healthert-web",
+    storageBucket: "healthert-web.appspot.com",
+    messagingSenderId: "1058865752969",
+    appId: "1:1058865752969:web:20e793f6f8fe243ad54f58"
 };
 
 // Initialize Firebase

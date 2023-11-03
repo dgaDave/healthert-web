@@ -5,10 +5,8 @@ import {
     signOut,
     onAuthStateChanged
 } from 'firebase/auth'
-import { firestoreDB } from '../firebase'
 import { auth } from '../firebase'
 import { validateUser } from '../validations/user.validation'
-import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import { getUser, postUser } from "../controllers/user.controller";
 
 export const authContext = createContext()
@@ -23,11 +21,24 @@ export function AuthProvider({ children }) {
 
     const [user, setUser] = useState(null)
     const [userData, setUserData] = useState(null)
-    const [rol, setRol] = useState(null)
     const [loading, setLoading] = useState(true)
 
     const signUp = async (email, password, userData) => {
 
+        try {
+            if (validateUser(email, password)) {
+                await createUserWithEmailAndPassword(auth, email, password).
+                    then(async (userCredential) => {
+                        const uid = userCredential.user.uid
+                        postUser(uid, userData)
+                    })
+            }
+        } catch (error) {
+            throw new Error(error)
+        }
+    }
+
+    const nurseSignUp = async (email, password, userData) => {
         try {
             if (validateUser(email, password)) {
                 await createUserWithEmailAndPassword(auth, email, password).
@@ -60,5 +71,5 @@ export function AuthProvider({ children }) {
     }, [])
 
 
-    return <authContext.Provider value={{ user, logIn, signUp, logOut, loading, userData }}>{children}</authContext.Provider>
+    return <authContext.Provider value={{ user, logIn, signUp, logOut, loading, userData, nurseSignUp }}>{children}</authContext.Provider>
 }

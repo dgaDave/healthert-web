@@ -8,7 +8,7 @@ import Button from '../Button/Button'
 
 const FormCreateNurse = () => {
 
-    const { signUp } = useAuth()
+    const { nurseSignUp } = useAuth()
 
     const [step, setStep] = useState(1)
 
@@ -24,7 +24,7 @@ const FormCreateNurse = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await signUp(formData.email, formData.password, {
+            await nurseSignUp(formData.email, formData.password, {
                 nombrec: {
                     "nombres": formData.nombres,
                     "apellidoP": formData.apellidoP,
