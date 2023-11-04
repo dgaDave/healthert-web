@@ -12,7 +12,6 @@ const FormNewPatient = () => {
     const [step, setStep] = useState(1)
     const navigate = useNavigate()
 
-
     const handleStepChange = (e) => {
         e.preventDefault()
         if (step < 4)
