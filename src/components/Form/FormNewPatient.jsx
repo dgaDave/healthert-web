@@ -6,11 +6,14 @@ import FormField from '../FormField/FormField'
 import Button from '../Button/Button'
 import { postPacient } from '../../controllers/pacient.controller'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../context/authContext'
 
 const FormNewPatient = () => {
     const { formData, handleFormDataChange } = useForm()
     const [step, setStep] = useState(1)
     const navigate = useNavigate()
+
+    const { user } = useAuth()
 
     const handleStepChange = (e) => {
         e.preventDefault()
@@ -20,10 +23,10 @@ const FormNewPatient = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            postPacient(formData).then(
+            postPacient({ ...formData, idCuidador: user.uid }).then(
                 (res) => {
                     console.log(res)
-                    navigate("/healthert-web/app")
+                    navigate(0)
                 }
             )
         } catch (error) {
@@ -52,7 +55,6 @@ const FormNewPatient = () => {
                                 <FormField key={"peso"} name="peso" onChange={handleFormDataChange} placeholder={"Peso Kg."} />
                                 <FormField key={"sexo"} name="sexo" onChange={handleFormDataChange} placeholder={"Sexo"} />
                                 <FormField key={"grupoS"} name="grupoS" onChange={handleFormDataChange} placeholder={"Grupo Sanguineo"} />
-
                             </>
                             :
                             step == 3 ?
@@ -69,7 +71,6 @@ const FormNewPatient = () => {
                                     <FormField key={"habitacion"} name="habitacion" onChange={handleFormDataChange} placeholder={"Número de Habitación"} />
                                 </>
                 }
-
                 <div className='flex justify-center mt-6 '>
                     <Button key={`${step == 1 ? `btn1` : step == 2 ? `btn2` : `btn3`}`} text={step != 4 ? "Continuar" : "Registrar"} /> {/* Considerar poner un boton de regreso */}
                 </div>
