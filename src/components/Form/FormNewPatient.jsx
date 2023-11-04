@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
-import { useAuth } from '../../context/authContext'
 import useForm from '../../hooks/useForm'
 import FormBase from './FormBase'
 import { motion } from 'framer-motion'
 import FormField from '../FormField/FormField'
 import Button from '../Button/Button'
+import { postPacient } from '../../controllers/pacient.controller'
+import { useNavigate } from 'react-router-dom'
 
 const FormNewPatient = () => {
     const { formData, handleFormDataChange } = useForm()
     const [step, setStep] = useState(1)
+    const navigate = useNavigate()
+
 
     const handleStepChange = (e) => {
         e.preventDefault()
@@ -18,24 +21,19 @@ const FormNewPatient = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await signUp(formData.email, formData.password, {
-                nombrec: {
-                    "nombres": formData.nombres,
-                    "apellidoP": formData.apellidoP,
-                    "apellidoM": formData.apellidoM
-                },
-                telefono: formData.telefono,
-                rfc: formData.rfc,
-                rol: formData.cargo,
-                admin: user.uid
-            })
+            postPacient(formData).then(
+                (res) => {
+                    console.log(res)
+                    navigate("/healthert-web/app")
+                }
+            )
         } catch (error) {
             throw new Error(error)
         }
     }
     return (
         <div className='flex justify-center'>
-            <FormBase onSubmit={step != 6 ? handleStepChange : handleSubmit}>
+            <FormBase onSubmit={step != 4 ? handleStepChange : handleSubmit}>
                 <motion.h3 layout className='text-3xl font-semibold'>Ingresar nuevo paciente.</motion.h3>
                 {
                     step == 1 ?
