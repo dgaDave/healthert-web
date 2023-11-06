@@ -7,11 +7,12 @@ import { useNavigate } from 'react-router'
 import { useAuth } from '../context/authContext'
 import ModalNewPatient from '../components/Modals/ModalNewPatient'
 import useModal from '../hooks/useModal'
+import usePacients from '../hooks/usePacients'
 const NursePanel = () => {
 
     const { logOut, userData } = useAuth()
     const { handleVisibilityChange, visible } = useModal()
-
+    const { pacients } = usePacients()
     const navigate = useNavigate()
 
     const handleLogOut = async () => {
@@ -30,7 +31,7 @@ const NursePanel = () => {
             <div className='absolute top-10 right-20 z-30'>
                 <Button text={"Agregar paciente"} onClick={handleVisibilityChange} />
             </div>
-            <ListadoPacientes userData={userData} />
+            <ListadoPacientes userData={userData} pacients={pacients} />
             <GoogleMap />
             <PacienteInfoCompleta />
         </div>)

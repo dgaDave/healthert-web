@@ -9,11 +9,11 @@ const CardListado = ({ img, name, speciality, age, bpm, curp, handleCardClick })
                 {speciality ?
                     <p>{speciality}</p>
                     : <>
+                        <p>CURP: {curp}</p>
                         <div className='flex space-x-4'>
-                            <p>Edad: {age}</p>
+                            {/* <p>Edad: {age}</p> */}
                             <p>BPM:{bpm} </p>
                         </div>
-                        <p>CURP: {curp}</p>
                     </>
                 }
             </div>
