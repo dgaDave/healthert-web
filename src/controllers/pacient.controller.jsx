@@ -18,7 +18,7 @@ export const getPacients = async (userid) => {
     return pacients
 }
 
-export const getBpm = async (userRef = "nDQDDb69UrMAlLd1tWfD", setValue) => {
+export const getBpm = async (userRef , setValue) => {
     const bpmReference = ref(realtimeDB, 'medicionTr/' + userRef + "/bpm")
     onValue(bpmReference, (snapshot) => {
         setValue(snapshot.val())
