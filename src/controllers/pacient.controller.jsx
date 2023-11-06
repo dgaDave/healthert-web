@@ -1,5 +1,6 @@
 import { collection, getDocs, query, where, addDoc } from '@firebase/firestore'
-import { firestoreDB } from '../firebase'
+import { firestoreDB, realtimeDB } from '../firebase'
+import { onValue, ref } from 'firebase/database'
 
 const pacientsRef = collection(firestoreDB, 'users')
 
@@ -15,4 +16,11 @@ export const getPacients = async (userid) => {
         pacients.push(doc.data())
     })
     return pacients
+}
+
+export const getBpm = async (userRef = "nDQDDb69UrMAlLd1tWfD", setValue) => {
+    const bpmReference = ref(realtimeDB, 'medicionTr/' + userRef + "/bpm")
+    onValue(bpmReference, (snapshot) => {
+        setValue(snapshot.val())
+    })
 }

@@ -8,6 +8,9 @@ import { useAuth } from '../context/authContext'
 import ModalNewPatient from '../components/Modals/ModalNewPatient'
 import useModal from '../hooks/useModal'
 import usePacients from '../hooks/usePacients'
+import useBpm from '../hooks/useBpm'
+import { getBpm } from '../controllers/pacient.controller'
+
 const NursePanel = () => {
 
     const { logOut, userData } = useAuth()
@@ -19,6 +22,13 @@ const NursePanel = () => {
         await logOut()
         navigate("/healthert-web/")
     }
+
+    const {bpmValue} = useBpm()
+
+    console.log(bpmValue)
+
+    // const { bpmRef } = useBpm()
+    // console.log(bpmRef)
 
     return (
         <div className='h-screen w-screen flex bg-gray-300'>
