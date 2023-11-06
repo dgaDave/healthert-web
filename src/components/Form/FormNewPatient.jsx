@@ -50,17 +50,17 @@ const FormNewPatient = () => {
                             <>
                                 <motion.h4 layout className='mt-2'>Salud básica.</motion.h4>{/* Considerar quitar */}
                                 <FormField key={"curp"} name="curp" onChange={handleFormDataChange} placeholder={"CURP"} />
-                                <FormField key={"fechanacimiento"} name="fechanacimiento" onChange={handleFormDataChange} placeholder={"Fecha de Nacimiento"} />
+                                <FormField key={"fechanacimiento"} name="fechaNacimiento" onChange={handleFormDataChange} placeholder={"Fecha de Nacimiento"} />
                                 <FormField key={"altura"} name="altura" onChange={handleFormDataChange} placeholder={"Altura cm."} />
                                 <FormField key={"peso"} name="peso" onChange={handleFormDataChange} placeholder={"Peso Kg."} />
                                 <FormField key={"sexo"} name="sexo" onChange={handleFormDataChange} placeholder={"Sexo"} />
-                                <FormField key={"grupoS"} name="grupoS" onChange={handleFormDataChange} placeholder={"Grupo Sanguineo"} />
+                                <FormField key={"grupoS"} name="grupoSanguineo" onChange={handleFormDataChange} placeholder={"Grupo Sanguineo"} />
                             </>
                             :
                             step == 3 ?
                                 <>
                                     <motion.h4 layout className='mt-2'>Salud avanzada.</motion.h4>{/* Considerar quitar */}
-                                    <FormField key={"numSeguro"} name="numSeguro" onChange={handleFormDataChange} placeholder={"Número de Seguro"} />
+                                    <FormField key={"numSeguro"} name="numeroSeguro" onChange={handleFormDataChange} placeholder={"Número de Seguro"} />
                                     <FormField key={"alergias"} name="alergias" onChange={handleFormDataChange} placeholder={"Alergias"} />
                                     <FormField key={"padecimientos"} name="padecimientos" onChange={handleFormDataChange} placeholder={"Padecimientos"} />
                                 </>

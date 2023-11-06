@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../components/Button/Button'
 import ListadoPacientes from '../components/ListadoPacientes/ListadoPacientes'
 import GoogleMap from '../components/GoogleMap/GoogleMap'
@@ -8,8 +8,7 @@ import { useAuth } from '../context/authContext'
 import ModalNewPatient from '../components/Modals/ModalNewPatient'
 import useModal from '../hooks/useModal'
 import usePacients from '../hooks/usePacients'
-import useBpm from '../hooks/useBpm'
-import { getBpm } from '../controllers/pacient.controller'
+
 
 const NursePanel = () => {
 
@@ -18,17 +17,17 @@ const NursePanel = () => {
     const { pacients } = usePacients()
     const navigate = useNavigate()
 
+    const [selectedPacient, setSelectedPacient] = useState(null)
+
+    const handleFocusedPacient = (pacient) => {
+        setSelectedPacient(pacient)
+        console.log(selectedPacient)
+    }
+
     const handleLogOut = async () => {
         await logOut()
         navigate("/healthert-web/")
     }
-
-    const {bpmValue} = useBpm()
-
-    console.log(bpmValue)
-
-    // const { bpmRef } = useBpm()
-    // console.log(bpmRef)
 
     return (
         <div className='h-screen w-screen flex bg-gray-300'>
@@ -41,9 +40,9 @@ const NursePanel = () => {
             <div className='absolute top-10 right-20 z-30'>
                 <Button text={"Agregar paciente"} onClick={handleVisibilityChange} />
             </div>
-            <ListadoPacientes userData={userData} pacients={pacients} />
+            <ListadoPacientes userData={userData} pacients={pacients} handleCardClick={handleFocusedPacient} />
             <GoogleMap />
-            <PacienteInfoCompleta />
+            <PacienteInfoCompleta pacient={selectedPacient} />
         </div>)
 }
 

@@ -7,7 +7,7 @@ const useBpm = (userRef) => {
     const [bpmValue, setBpmValue] = useState(0)
 
     useEffect(() => {
-        const unsubscribe = getBpm(userRef = "nDQDDb69UrMAlLd1tWfD", setBpmValue)
+        const unsubscribe = getBpm(userRef, setBpmValue)
         return () => {
             unsubscribe()
         }

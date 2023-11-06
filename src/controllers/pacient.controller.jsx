@@ -13,12 +13,14 @@ export const getPacients = async (userid) => {
     const querySnapshot = await getDocs(query(pacientsRef, where("idCuidador", "==", userid)))
     const pacients = []
     querySnapshot.forEach((doc) => {
-        pacients.push(doc.data())
+        const id = doc.id
+        const data = doc.data()
+        pacients.push({...data, id: id})
     })
     return pacients
 }
 
-export const getBpm = async (userRef , setValue) => {
+export const getBpm = async (userRef, setValue) => {
     const bpmReference = ref(realtimeDB, 'medicionTr/' + userRef + "/bpm")
     onValue(bpmReference, (snapshot) => {
         setValue(snapshot.val())
