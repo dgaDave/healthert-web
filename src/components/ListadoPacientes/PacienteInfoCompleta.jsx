@@ -16,21 +16,21 @@ const PacienteInfoCompleta = ({ pacient }) => {
                 <div className='absolute -top-7 md:-top-9 rounded-full border-2 border-verde hover:scale-110 transition duration-300'>
                     <img className='w-12 md:w-16' src='/src/assets/images/logo/logo.png'></img>
                 </div>
-                <div className={`${isOpen && (`overflow-y-auto`)} overflow-y-hidden flex flex-col p-4 w-full text-xl h-full min-h-full`}>
+                <div className={`${isOpen && (`overflow-y-auto`)} overflow-y-hidden flex flex-col p-4 w-full text-xl h-full min-h-full place-content-around`}>
                     <p className='text-3xl font-semibold'>{`${nombres} ${apellidoP} ${apellidoM}`}</p>
-                    <div className='flex space-x-20'>
-                        <p>Curp: {curp}</p>
-                        <p>Grupo sanguineo: {grupoSanguineo} </p>
-                        <p>Genero: {sexo} </p>
-                        <p>NSS: {numeroSeguro} </p>
+                    <div className='grid grid-cols-3 gap-4'>
+                        <div><p>Curp: {curp}</p></div>
+                        <div><p>Grupo sanguineo: {grupoSanguineo} </p></div>
+                        <div><p>NSS: {numeroSeguro} </p></div>
                     </div>
                     {isOpen && (<>
-                        <div className='flex space-x-20'>
-                            <p>Edad: {fechaNacimiento} anos</p>
-                            <p>Peso: {peso}Kg</p>
-                            <p>Altura: {altura} cm</p>
+                        <div className='grid grid-cols-3 gap-4'>
+                            <div><p>Edad: {fechaNacimiento} años</p></div>
+                            <div><p>Peso: {peso}Kg</p></div>
+                            <div><p>Altura: {altura} cm</p></div>
                         </div>
-                        <div className='flex h-fit overflow-y-auto space-x-20'>
+                        <div className='h-fit overflow-y-auto grid grid-cols-3 gap-4'>
+                            <div><p>Genero: {sexo} </p></div>
                             <div className='inline-block'>
                                 <p className=''>Alergias: {alergias}</p>
                                 {/* <ul>
