@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GoogleMapsProvider, useGoogleMap } from '@ubilabs/google-maps-react-hooks'
 import { styles } from './MapStyles'
+import GoogleMapsMarker from './GoogleMapsMarker'
 
 const GoogleMap = ({ pacients }) => {
     const mapOptions = {
@@ -9,17 +10,15 @@ const GoogleMap = ({ pacients }) => {
             lat: 43.68,
             lng: -79.43
         },
-        minZoom: 15,
+        // minZoom: 15,
         maxZoom: 22,
         disableDefaultUI: true,
         styles: styles
     }
 
     const [mapContainer, setMapContainer] = useState(null)
-    const map = useGoogleMap()
-    const [markers, setMarkers] = useState([])
 
-    
+
 
     return (
         <div className='h-screen w-3/4 flex flex-row-reverse'>
@@ -28,10 +27,8 @@ const GoogleMap = ({ pacients }) => {
                 mapOptions={mapOptions}
                 mapContainer={mapContainer} >
                 <div className='h-full w-full' ref={(node) => setMapContainer(node)} />
-
             </GoogleMapsProvider >
         </div>
-
     )
 }
 
