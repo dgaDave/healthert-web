@@ -15,7 +15,7 @@ export const getPacients = async (userid) => {
     querySnapshot.forEach((doc) => {
         const id = doc.id
         const data = doc.data()
-        pacients.push({...data, id: id})
+        pacients.push({ ...data, id: id })
     })
     return pacients
 }
@@ -23,6 +23,13 @@ export const getPacients = async (userid) => {
 export const getBpm = async (userRef, setValue) => {
     const bpmReference = ref(realtimeDB, 'medicionTr/' + userRef + "/bpm")
     onValue(bpmReference, (snapshot) => {
+        setValue(snapshot.val())
+    })
+}
+
+export const getLocation = async (userRef, setValue) => {
+    const locationReference = ref(realtimeDB, 'medicionTr/' + userRef + '/coordenadas')
+    onValue(locationReference, (snapshot) => {
         setValue(snapshot.val())
     })
 }

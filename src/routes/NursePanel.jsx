@@ -9,14 +9,12 @@ import ModalNewPatient from '../components/Modals/ModalNewPatient'
 import useModal from '../hooks/useModal'
 import usePacients from '../hooks/usePacients'
 
-
 const NursePanel = () => {
 
     const { logOut, userData } = useAuth()
     const { handleVisibilityChange, visible } = useModal()
     const { pacients } = usePacients()
     const navigate = useNavigate()
-
     const [selectedPacient, setSelectedPacient] = useState(null)
 
     const handleFocusedPacient = (pacient) => {

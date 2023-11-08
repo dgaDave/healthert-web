@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { GoogleMapsProvider, useGoogleMap } from '@ubilabs/google-maps-react-hooks'
 import { styles } from './MapStyles'
 
-const GoogleMap = () => {
+const GoogleMap = ({ pacients }) => {
     const mapOptions = {
         zoom: 18,
         center: {
@@ -16,6 +16,10 @@ const GoogleMap = () => {
     }
 
     const [mapContainer, setMapContainer] = useState(null)
+    const map = useGoogleMap()
+    const [markers, setMarkers] = useState([])
+
+    
 
     return (
         <div className='h-screen w-3/4 flex flex-row-reverse'>
@@ -24,6 +28,7 @@ const GoogleMap = () => {
                 mapOptions={mapOptions}
                 mapContainer={mapContainer} >
                 <div className='h-full w-full' ref={(node) => setMapContainer(node)} />
+
             </GoogleMapsProvider >
         </div>
 
