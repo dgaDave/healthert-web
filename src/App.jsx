@@ -11,29 +11,27 @@ import SignUp from "./routes/SignUp"
 const router = createBrowserRouter([
   {
     path: "/healthert-web/",
-    element: <RedirectingRoute><Landing /></RedirectingRoute>,
+    element: <Landing />,
     errorElement: <Error />
   },
-  {
-    path: 'healthert-web/login',
-    element: <RedirectingRoute><LogIn /></RedirectingRoute>,
-    errorElement: <Error />
-  },
-  {
-    path: 'healthert-web/signup',
-    element: <RedirectingRoute><SignUp /></RedirectingRoute>
-  },
-  {
-    path: 'healthert-web/app',
-    element: <ProtectedRoute><AppMain /></ProtectedRoute>
-  },
+  // {
+  //   path: 'healthert-web/login',
+  //   element: <RedirectingRoute><LogIn /></RedirectingRoute>,
+  //   errorElement: <Error />
+  // },
+  // {
+  //   path: 'healthert-web/signup',
+  //   element: <RedirectingRoute><SignUp /></RedirectingRoute>
+  // },
+  // {
+  //   path: 'healthert-web/app',
+  //   element: <ProtectedRoute><AppMain /></ProtectedRoute>
+  // },
 ])
 
 function App() {
   return (
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <RouterProvider router={router} />
   )
 }
 

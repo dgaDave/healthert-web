@@ -7,12 +7,12 @@ import insti_plan_img from "../../assets/images/Images_accord/medicos_image.png"
 const Planes = () => {
   const items = [
     {
-      titulo: 'Plan Personal',
+      titulo: 'Plan Público',
       contenido: '¡Obten la capacidad de monitorear, cuidar y recibir alertas de una persona en tiempo real! . Con este plan podrás acceder a funciones como: Monitoreo de ritmo cardiaco y ubicación geográfica, gráficas sobre el comportamiento del paciente y más! .',
       img: personal_plan_img
     },
     {
-      titulo: 'Plan Institucional',
+      titulo: 'Plan Privado',
       contenido: "Servicio dirigido a instituciones de salud para aprovecharlo al máximo. Enfocado en las y los enfermeros, brindamos la capacidad de monitorear varios pacientes a la vez, vista por pisos y más datos específicos para apoyar en el cuidado especializado.",
       img: insti_plan_img
     }
@@ -20,7 +20,7 @@ const Planes = () => {
 
   const planes = [
     {
-      titulo: "Plan Personal",
+      titulo: "Plan Público",
       precio: 100,
       periodo: "/mes",
       caracteristicas: [
@@ -32,8 +32,8 @@ const Planes = () => {
       ],
     },
     {
-      titulo: "Plan Institucional",
-      precio: 1000,
+      titulo: "Plan Privado",
+      precio: [1000],
       periodo: "/anual",
       caracteristicas: [
         "Cuidado más cercano",

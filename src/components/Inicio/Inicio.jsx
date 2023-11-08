@@ -16,7 +16,7 @@ const Inicio = () => {
               <p>Aplicación móvil de monitoreo y alerta remota</p>
             </div>
             <div className='flex w-full justify-center my-4 font-semibold'>
-              <Button link={""} text={"Descargar"} svg={<PlayG></PlayG>}></Button>
+              {/* <Button link={""} text={"Descargar"} svg={<PlayG></PlayG>}></Button> */}
             </div>
           </div>
           <div className='flex items-center content-center'>

@@ -13,7 +13,7 @@ const NavBar = ({link, text}) => {
           <span className='hidden sm:inline-block text-3xl font-semibold md:text-4xl text-verde'>HEALTHERT</span>
         </div>
       </Link>
-      <Button text={text} link={link} />
+      {/* <Button text={text} link={link} /> */}
     </nav >
   )
 }

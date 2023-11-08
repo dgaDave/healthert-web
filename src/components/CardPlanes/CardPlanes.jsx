@@ -34,7 +34,7 @@ export const CardPlanes = ({planes}) => {
             ))}
           </ul>
           <div className="flex justify-center">
-            <Button text="¡Contrata!" className="btn-card" />
+            {/* <Button text="¡Contrata!" className="btn-card" /> */}
           </div>
         </div>
       ))}

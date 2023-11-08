@@ -6,11 +6,8 @@ import Planes from '../components/Planes/Planes'
 import Funciones from '../components/Funciones/Funciones'
 import { useAuth } from '../context/authContext'
 
-const Landing = () => {
+const   Landing = () => {
 
-
-  const { user } = useAuth()
-  console.log(user)
   return (
     <>
       <NavBar link="login" text="Iniciar sesion" />
