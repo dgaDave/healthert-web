@@ -10,7 +10,7 @@ const GoogleMap = ({ pacients }) => {
             lat: 43.68,
             lng: -79.43
         },
-        minZoom: 15,
+        // minZoom: 15,
         maxZoom: 22,
         disableDefaultUI: true,
         styles: styles
@@ -27,6 +27,7 @@ const GoogleMap = ({ pacients }) => {
                 mapOptions={mapOptions}
                 mapContainer={mapContainer} >
                 <div className='h-full w-full' ref={(node) => setMapContainer(node)} />
+                <GoogleMapsMarker/>
             </GoogleMapsProvider >
         </div>
     )
