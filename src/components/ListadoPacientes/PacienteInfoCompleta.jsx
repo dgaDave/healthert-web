@@ -17,7 +17,10 @@ const PacienteInfoCompleta = ({ pacient }) => {
                     <img className='w-12 md:w-16' src='/src/assets/images/logo/logo.png'></img>
                 </div>
                 <div className={`${isOpen && (`overflow-y-auto`)} overflow-y-hidden flex flex-col p-4 w-full text-xl h-full min-h-full place-content-around`}>
-                    <p className='text-3xl font-semibold'>{`${nombres} ${apellidoP} ${apellidoM}`}</p>
+                    <div className='flex justify-between'>
+                    <p className='text-3xl font-semibold'>{`${nombres} ${apellidoP} ${apellidoM}`} </p>
+                    <p className='mr-12 justify-between'>Piso: {piso} Habitación: {habitacion}</p>
+                    </div>
                     <div className='grid grid-cols-3 gap-4'>
                         <div><p>Curp: {curp}</p></div>
                         <div><p>Grupo sanguineo: {grupoSanguineo} </p></div>
@@ -25,7 +28,7 @@ const PacienteInfoCompleta = ({ pacient }) => {
                     </div>
                     {isOpen && (<>
                         <div className='grid grid-cols-3 gap-4'>
-                            <div><p>Edad: {fechaNacimiento} años</p></div>
+                            <div><p>Fecha de nacimiento: {fechaNacimiento}</p></div>
                             <div><p>Peso: {peso}Kg</p></div>
                             <div><p>Altura: {altura} cm</p></div>
                         </div>
@@ -50,7 +53,7 @@ const PacienteInfoCompleta = ({ pacient }) => {
                                     )
                                     }
                                 </ul> */}
-                            </div>
+                            </div>                            
                         </div>
                     </>
                     )}
