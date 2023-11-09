@@ -1,12 +1,14 @@
 import { collection, getDocs, query, where, addDoc } from '@firebase/firestore'
 import { firestoreDB, realtimeDB } from '../firebase'
 import { onValue, ref } from 'firebase/database'
+import { postPic } from './files.controller'
 
 const pacientsRef = collection(firestoreDB, 'users')
 
-export const postPacient = async (userData) => {
+export const postPacient = async (userData, file) => {
     const docRef = await addDoc(pacientsRef, userData)
-    return docRef.id
+    console.log(docRef.id)
+    await postPic(docRef.id, file)
 }
 
 export const getPacients = async (userid) => {
@@ -19,6 +21,7 @@ export const getPacients = async (userid) => {
     })
     return pacients
 }
+
 
 export const getBpm = async (userRef, setValue) => {
     const bpmReference = ref(realtimeDB, 'medicionTr/' + userRef + "/bpm")

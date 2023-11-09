@@ -8,6 +8,7 @@ import {
 import { auth } from '../firebase'
 import { validateUser } from '../validations/user.validation'
 import { getUser, postUser } from "../controllers/user.controller";
+import {postPic} from '../controllers/files.controller'
 
 export const authContext = createContext()
 
@@ -38,13 +39,16 @@ export function AuthProvider({ children }) {
         }
     }
 
-    const nurseSignUp = async (email, password, userData) => {
+    const nurseSignUp = async (email, password, userData, file) => {
         try {
             if (validateUser(email, password)) {
                 await createUserWithEmailAndPassword(auth, email, password).
                     then(async (userCredential) => {
                         const uid = userCredential.user.uid
-                        postUser(uid, userData)
+                        await postUser(uid, userData).then(
+                            postPic(userCredential.user.uid, file)
+                        )
+                        
                     })
             }
         } catch (error) {

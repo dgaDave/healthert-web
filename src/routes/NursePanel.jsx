@@ -11,7 +11,7 @@ import usePacients from '../hooks/usePacients'
 
 const NursePanel = () => {
 
-    const { logOut, userData } = useAuth()
+    const { logOut, userData, user } = useAuth()
     const { handleVisibilityChange, visible } = useModal()
     const { pacients } = usePacients()
     const navigate = useNavigate()
@@ -39,7 +39,7 @@ const NursePanel = () => {
                 <Button text={"Agregar paciente"} onClick={handleVisibilityChange} />
             </div>
             <ListadoPacientes userData={userData} pacients={pacients} handleCardClick={handleFocusedPacient} />
-            <GoogleMap />
+            <GoogleMap pacients={pacients}/>
             <PacienteInfoCompleta pacient={selectedPacient} />
         </div>)
 }

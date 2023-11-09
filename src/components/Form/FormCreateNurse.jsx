@@ -5,6 +5,7 @@ import { useAuth } from '../../context/authContext'
 import useForm from '../../hooks/useForm'
 import FormField from '../FormField/FormField'
 import Button from '../Button/Button'
+import FileField from '../FormField/FileField'
 
 const FormCreateNurse = () => {
 
@@ -12,12 +13,13 @@ const FormCreateNurse = () => {
 
     const [step, setStep] = useState(1)
 
-    const { formData, handleFormDataChange } = useForm()
+    const { formData, handleFormDataChange, handleFormPicChange, picData } = useForm()
 
     const handleStepChange = (e) => {
         e.preventDefault()
         setStep(step + 1)
     }
+
 
     const { user } = useAuth()
 
@@ -33,8 +35,8 @@ const FormCreateNurse = () => {
                 telefono: formData.telefono,
                 rfc: formData.rfc,
                 rol: formData.cargo,
-                admin:user.uid
-            })
+                admin: user.uid
+            }, picData)
         } catch (error) {
             throw new Error(error)
         }
@@ -49,6 +51,7 @@ const FormCreateNurse = () => {
             step == 1 ?
                 <>
                     {/* Primer form */}
+                    <FileField key={"pic"} name="pic" placeholder={"Imagen de perfil"} onChange={handleFormPicChange} text={"Imagen de perfil"} />
                     <FormField key={"email"} name="email" onChange={handleFormDataChange} placeholder={"Correo electronico"} text={"Correo electronico"} type={"email"} />
                     <FormField key={"password"} name="password" onChange={handleFormDataChange} placeholder={"Contrasena"} text={"Contrasena"} type={"password"} />
                 </>

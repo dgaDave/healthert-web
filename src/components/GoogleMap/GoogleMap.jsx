@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { GoogleMapsProvider, useGoogleMap } from '@ubilabs/google-maps-react-hooks'
 import { styles } from './MapStyles'
 import GoogleMapsMarker from './GoogleMapsMarker'
@@ -16,21 +16,28 @@ const GoogleMap = ({ pacients }) => {
         styles: styles
     }
 
+    console.log(pacients)
+
     const [mapContainer, setMapContainer] = useState(null)
 
+    if (!pacients) {
+        return;
+    } else {
+        return (
+            <div className='h-screen w-3/4 flex flex-row-reverse'>
+                <GoogleMapsProvider
+                    googleMapsAPIKey='AIzaSyBbY_7khNJQ706ykCfevkbBMEG3twrf_-Y'
+                    mapOptions={mapOptions}
+                    mapContainer={mapContainer} >
+                    <div className='h-full w-full' ref={(node) => setMapContainer(node)} />
+                    {pacients.map((pacient) =>
+                        <GoogleMapsMarker key={pacient.id} pacient={pacient} />
+                    )}
+                </GoogleMapsProvider >
+            </div>
+        )
+    }
 
-
-    return (
-        <div className='h-screen w-3/4 flex flex-row-reverse'>
-            <GoogleMapsProvider
-                googleMapsAPIKey='AIzaSyBbY_7khNJQ706ykCfevkbBMEG3twrf_-Y'
-                mapOptions={mapOptions}
-                mapContainer={mapContainer} >
-                <div className='h-full w-full' ref={(node) => setMapContainer(node)} />
-                <GoogleMapsMarker/>
-            </GoogleMapsProvider >
-        </div>
-    )
 }
 
 export default GoogleMap

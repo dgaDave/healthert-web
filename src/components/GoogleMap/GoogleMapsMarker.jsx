@@ -1,34 +1,47 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useGoogleMap } from '@ubilabs/google-maps-react-hooks'
 import useLocation from '../../hooks/useLocation'
-const GoogleMapsMarker = ({pacient}) => {
+import usePic from '../../hooks/usePic'
+const GoogleMapsMarker = ({ pacient }) => {
 
-    const { locationValue } = useLocation("s6cRMeNL7dzJyasthmrs")
+    const { locationValue } = useLocation(pacient.id)
     const map = useGoogleMap()
     const markerRef = useRef()
-
+    const { picUrl } = usePic(pacient.id)
 
     useEffect(() => {
         if (!map || markerRef.current) return () => { }
         const svgMarker = {
-            url: "https://es.coachesvoice.com/wp-content/uploads/2020/12/RonaldoMobile.png",
+            url: "",
             scaledSize: new google.maps.Size(50, 50),
             origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(0, 0)
         }
         const markerOptions = {
             map,
-            title: "1",
+            title: pacient.curp,
             icon: svgMarker,
-            label: {
-                text: "Hola",
-                color: "#FFF"
-            },
+            // label: {
+            //     text: pacient.curp,
+            //     color: "#6FD81C"
+            // },
             clickable: false,
             draggable: false
         };
         markerRef.current = new google.maps.Marker(markerOptions)
     }, [map])
+
+    useEffect(() => {
+        if (!map || !markerRef.current) return () => { }
+        const svgMarker = {
+            url: picUrl,
+            scaledSize: new google.maps.Size(50, 50),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(0, 0),
+        }
+        markerRef.current.setIcon(svgMarker)
+    }, [picUrl])
+
 
     useEffect(() => {
         if (!markerRef.current) return () => { }
@@ -39,6 +52,9 @@ const GoogleMapsMarker = ({pacient}) => {
         })
 
     }, [locationValue || map])
+
+
+
 
 
 }

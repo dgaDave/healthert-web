@@ -3,13 +3,14 @@ import useForm from '../../hooks/useForm'
 import FormBase from './FormBase'
 import { motion } from 'framer-motion'
 import FormField from '../FormField/FormField'
+import FileField from '../FormField/FileField'
 import Button from '../Button/Button'
 import { postPacient } from '../../controllers/pacient.controller'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/authContext'
 
 const FormNewPatient = () => {
-    const { formData, handleFormDataChange } = useForm()
+    const { formData, handleFormDataChange, handleFormPicChange, picData } = useForm()
     const [step, setStep] = useState(1)
     const navigate = useNavigate()
 
@@ -20,10 +21,11 @@ const FormNewPatient = () => {
         if (step < 4)
             setStep(step + 1)
     }
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            postPacient({ ...formData, idCuidador: user.uid }).then(
+            await postPacient({ ...formData, idCuidador: user.uid }, picData).then(
                 (res) => {
                     console.log(res)
                     navigate(0)
@@ -33,6 +35,7 @@ const FormNewPatient = () => {
             throw new Error(error)
         }
     }
+
     return (
         <div className='flex justify-center'>
             <FormBase onSubmit={step != 4 ? handleStepChange : handleSubmit}>
@@ -41,6 +44,7 @@ const FormNewPatient = () => {
                     step == 1 ?
                         <>
                             <motion.h4 layout className='mt-2'>Información básica.</motion.h4>{/* Considerar quitar */}
+                            <FileField key={"pic"} name="pic" onChange={handleFormPicChange} placeholder={"Imagen de perfil"} text={"Imagen de perfil"} />
                             <FormField key={"nombres"} name="nombres" onChange={handleFormDataChange} placeholder={"Nombre(s)"} />
                             <FormField key={"apellidoP"} name="apellidoP" onChange={handleFormDataChange} placeholder={"Apellido Paterno"} />
                             <FormField key={"apellidoM"} name="apellidoM" onChange={handleFormDataChange} placeholder={"Apellido Materno"} />
