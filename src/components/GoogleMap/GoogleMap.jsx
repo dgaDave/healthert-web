@@ -7,10 +7,10 @@ const GoogleMap = ({ pacients }) => {
     const mapOptions = {
         zoom: 18,
         center: {
-            lat: 43.68,
-            lng: -79.43
+            lat: 19.682278,
+            lng: -101.1808873
         },
-        // minZoom: 15,
+        minZoom: 15,
         maxZoom: 22,
         disableDefaultUI: true,
         styles: styles

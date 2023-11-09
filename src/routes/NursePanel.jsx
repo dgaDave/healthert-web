@@ -34,8 +34,8 @@ const NursePanel = () => {
     return (
         <div className='h-screen w-screen flex bg-gray-300'>
             <div className='absolute top-8 right-5 z-30 space-y-3'>
-                <FloatingAction svg={<OutNurse />} />
-                <FloatingAction svg={<AddPatient />} />
+                <FloatingAction onClick={handleLogOut} svg={<OutNurse />} />
+                <FloatingAction onClick={handleVisibilityChange} svg={<AddPatient />} />
                 <FloatingAction svg={<Plus />} />
                 <FloatingAction svg={<Minus />} />
             </div>
@@ -43,7 +43,7 @@ const NursePanel = () => {
                 <ModalNewPatient handleVisibilityChange={handleVisibilityChange} />
             )}
             <ListadoPacientes userData={userData} pacients={pacients} handleCardClick={handleFocusedPacient} />
-            <GoogleMap pacients={pacients}/>
+            <GoogleMap pacients={pacients} />
             <PacienteInfoCompleta pacient={selectedPacient} />
         </div>)
 }
