@@ -11,7 +11,7 @@ import usePacients from '../hooks/usePacients'
 
 const NursePanel = () => {
 
-    const { logOut, userData, user } = useAuth()
+    const { logOut, userData } = useAuth()
     const { handleVisibilityChange, visible } = useModal()
     const { pacients } = usePacients()
     const navigate = useNavigate()
@@ -19,7 +19,6 @@ const NursePanel = () => {
 
     const handleFocusedPacient = (pacient) => {
         setSelectedPacient(pacient)
-        console.log(selectedPacient)
     }
 
     const handleLogOut = async () => {
