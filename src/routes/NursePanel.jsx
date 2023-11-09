@@ -8,6 +8,11 @@ import { useAuth } from '../context/authContext'
 import ModalNewPatient from '../components/Modals/ModalNewPatient'
 import useModal from '../hooks/useModal'
 import usePacients from '../hooks/usePacients'
+import FloatingAction from '../components/FAB/FloatingAction'
+import AddPatient from '../components/FAB/Icons/AddPatient'
+import OutNurse from '../components/FAB/Icons/OutNurse'
+import Minus from '../components/FAB/Icons/Minus'
+import Plus from '../components/FAB/Icons/Plus'
 
 const NursePanel = () => {
 
@@ -28,15 +33,15 @@ const NursePanel = () => {
 
     return (
         <div className='h-screen w-screen flex bg-gray-300'>
-            <div className='absolute top-32 right-20 z-30'>
-                <Button text={"salir"} onClick={handleLogOut} />
+            <div className='absolute top-8 right-5 z-30 space-y-3'>
+                <FloatingAction svg={<OutNurse />} />
+                <FloatingAction svg={<AddPatient />} />
+                <FloatingAction svg={<Plus />} />
+                <FloatingAction svg={<Minus />} />
             </div>
             {visible && (
                 <ModalNewPatient handleVisibilityChange={handleVisibilityChange} />
             )}
-            <div className='absolute top-10 right-20 z-30'>
-                <Button text={"Agregar paciente"} onClick={handleVisibilityChange} />
-            </div>
             <ListadoPacientes userData={userData} pacients={pacients} handleCardClick={handleFocusedPacient} />
             <GoogleMap pacients={pacients}/>
             <PacienteInfoCompleta pacient={selectedPacient} />
